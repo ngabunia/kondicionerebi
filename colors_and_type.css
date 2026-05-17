@@ -1,0 +1,210 @@
+/* =============================================================
+   kondicionerebi.ge — tokens + semantic CSS variables
+   ============================================================= */
+
+/* Georgian + Latin font stack.
+   FiraGO is the primary Georgian face. Noto Sans Georgian is the
+   fallback. Inter handles Latin numerics/model strings. */
+@import url("https://fonts.googleapis.com/css2?family=Noto+Sans+Georgian:wght@400;500;600;700&family=Inter:wght@400;500;600;700&display=swap");
+@import url("https://cdn.jsdelivr.net/gh/bpg-infra/firago@1.001/dist/firago.css");
+
+:root {
+  /* ---------- COLOR TOKENS ---------- */
+  --color-primary:        #0A2540;  /* deep cool blue */
+  --color-primary-90:     #1E3A56;
+  --color-primary-80:     #324F6C;
+
+  --color-accent:         #06B6D4;  /* cyan */
+  --color-accent-hover:   #0891B2;
+  --color-accent-soft:    #E0F7FA;  /* TL;DR bg */
+
+  --color-warning:        #F59E0B;  /* amber — sale prices ONLY */
+
+  --color-text:           #1F2937;  /* body */
+  --color-text-muted:     #6B7280;  /* metadata */
+
+  --color-border:         #E5E7EB;
+  --color-bg:             #FFFFFF;
+  --color-bg-alt:         #FAFBFC;
+
+  --color-overlay:        rgba(10, 37, 64, 0.6);
+  --color-cyan-tint:      rgba(6, 182, 212, 0.08);
+
+  /* ---------- TYPE TOKENS ---------- */
+  --font-ge:    "FiraGO", "Noto Sans Georgian", "BPG Glaho Sans", system-ui, sans-serif;
+  --font-latin: "Inter", system-ui, -apple-system, "Segoe UI", sans-serif;
+
+  /* Desktop sizes */
+  --fs-h1:     40px;
+  --fs-h2:     30px;
+  --fs-h3:     22px;
+  --fs-h4:     18px;
+  --fs-body:   18px;
+  --fs-small:  15px;
+
+  --lh-h1:     1.2;
+  --lh-h2:     1.3;
+  --lh-h3:     1.4;
+  --lh-h4:     1.4;
+  --lh-body:   1.75;  /* Mkhedruli needs looser leading */
+  --lh-small:  1.6;
+
+  --fw-regular:  400;
+  --fw-medium:   500;
+  --fw-semibold: 600;
+  --fw-bold:     700;
+
+  /* ---------- SPACING (8px base, 4 for tight) ---------- */
+  --space-1:   4px;
+  --space-2:   8px;
+  --space-3:  12px;
+  --space-4:  16px;
+  --space-5:  24px;
+  --space-6:  32px;
+  --space-7:  48px;
+  --space-8:  64px;
+  --space-9:  96px;
+
+  /* ---------- RADII ---------- */
+  --radius-sm:    4px;   /* inputs, chips */
+  --radius-md:    8px;   /* buttons */
+  --radius-lg:   12px;   /* cards */
+  --radius-xl:   16px;   /* hero image */
+  --radius-full: 999px;  /* avatars, pills */
+
+  /* ---------- ELEVATION ---------- */
+  --shadow-card:   0 4px 12px rgba(0, 0, 0, 0.06);
+  --shadow-sticky: 0 1px 0 var(--color-border);
+
+  /* ---------- LAYOUT ---------- */
+  --w-article:  720px;
+  --w-sidebar:  260px;
+  --w-page:    1200px;
+  --gutter:     32px;
+
+  /* ---------- MOTION ---------- */
+  --ease:       cubic-bezier(0.2, 0, 0.2, 1);
+  --dur-fast:   120ms;
+  --dur:        150ms;
+  --dur-slow:   240ms;
+}
+
+/* Mobile overrides */
+@media (max-width: 720px) {
+  :root {
+    --fs-h1:    30px;
+    --fs-h2:    24px;
+    --fs-h3:    20px;
+    --fs-h4:    17px;
+    --fs-body:  16px;
+    --fs-small: 14px;
+
+    --space-7: 32px;
+    --space-8: 48px;
+    --space-9: 64px;
+  }
+}
+
+/* =============================================================
+   Base typographic resets
+   ============================================================= */
+html, body {
+  background: var(--color-bg);
+  color: var(--color-text);
+  font-family: var(--font-ge);
+  font-size: var(--fs-body);
+  line-height: var(--lh-body);
+  -webkit-font-smoothing: antialiased;
+  text-rendering: optimizeLegibility;
+}
+
+/* Mkhedruli-justification breaks word shapes — always left-align. */
+p, li, dd, blockquote { text-align: left; text-wrap: pretty; }
+
+/* =============================================================
+   Semantic type styles
+   ============================================================= */
+h1, .h1 {
+  font-family: var(--font-ge);
+  font-size: var(--fs-h1);
+  line-height: var(--lh-h1);
+  font-weight: var(--fw-bold);
+  color: var(--color-primary);
+  letter-spacing: -0.01em;
+  text-wrap: balance;
+}
+
+h2, .h2 {
+  font-family: var(--font-ge);
+  font-size: var(--fs-h2);
+  line-height: var(--lh-h2);
+  font-weight: var(--fw-semibold);
+  color: var(--color-primary);
+  text-wrap: balance;
+}
+
+h3, .h3 {
+  font-family: var(--font-ge);
+  font-size: var(--fs-h3);
+  line-height: var(--lh-h3);
+  font-weight: var(--fw-semibold);
+  color: var(--color-primary);
+}
+
+h4, .h4 {
+  font-family: var(--font-ge);
+  font-size: var(--fs-h4);
+  line-height: var(--lh-h4);
+  font-weight: var(--fw-semibold);
+  color: var(--color-primary);
+}
+
+p, .body {
+  font-size: var(--fs-body);
+  line-height: var(--lh-body);
+  font-weight: var(--fw-regular);
+  color: var(--color-text);
+}
+
+.small, small, figcaption {
+  font-size: var(--fs-small);
+  line-height: var(--lh-small);
+  color: var(--color-text-muted);
+}
+
+.muted  { color: var(--color-text-muted); }
+.latin  { font-family: var(--font-latin); }   /* model names / prices */
+.num    { font-family: var(--font-latin); font-variant-numeric: tabular-nums; }
+
+/* =============================================================
+   Links + interactive base
+   ============================================================= */
+a {
+  color: var(--color-accent);
+  text-decoration: none;
+  transition: color var(--dur) var(--ease), text-decoration-color var(--dur) var(--ease);
+}
+a:hover {
+  color: var(--color-accent-hover);
+  text-decoration: underline;
+  text-decoration-thickness: 1px;
+  text-underline-offset: 2px;
+}
+
+/* =============================================================
+   Reusable primitives
+   ============================================================= */
+.pill {
+  display: inline-flex;
+  align-items: center;
+  gap: var(--space-1);
+  padding: 2px var(--space-2);
+  font-size: var(--fs-small);
+  font-weight: var(--fw-semibold);
+  border-radius: var(--radius-full);
+  background: var(--color-accent-soft);
+  color: var(--color-accent-hover);
+  line-height: 1.4;
+}
+
+.hairline { border-top: 1px solid var(--color-border); }

@@ -1,0 +1,110 @@
+<!doctype html>
+<html lang="ka">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>kondicionerebi.ge — დამოუკიდებელი მიმოხილვები კონდიციონერებზე</title>
+  <link rel="stylesheet" href="site.css">
+  <link rel="stylesheet" href="site2.css">
+  <script src="https://unpkg.com/react@18.3.1/umd/react.development.js" integrity="sha384-hD6/rw4ppMLGNu3tX5cjIb+uRZ7UkRJ6BPkLpg4hAu/6onKUg4lLsHAs9EBPT82L" crossorigin="anonymous"></script>
+  <script src="https://unpkg.com/react-dom@18.3.1/umd/react-dom.development.js" integrity="sha384-u6aeetuaXnQ38mYT8rp6sbXaQe3NL9t+IBXmnYxwkUI2Hw4bsp2Wvmx4yRQF1uAm" crossorigin="anonymous"></script>
+  <script src="https://unpkg.com/@babel/standalone@7.29.0/babel.min.js" integrity="sha384-m08KidiNqLdpJqLq95G/LEi8Qvjl/xUYll3QILypMoQ65QorJ9Lvtp2RXYGBFj1y" crossorigin="anonymous"></script>
+</head>
+<body>
+  <div id="root"></div>
+
+  <script type="text/babel" src="Icons.jsx"></script>
+  <script type="text/babel" src="Nav.jsx"></script>
+  <script type="text/babel" src="FAQ.jsx"></script>
+  <script type="text/babel" src="Footer.jsx"></script>
+  <script type="text/babel" src="HomeComponents.jsx"></script>
+
+  <script type="text/babel">
+    const featureCard = {
+      tag: "გზამკვლევი",
+      title: "კონდიციონერი ბინისთვის 2026: საუკეთესო არჩევანი",
+      dek: "14 მოდელი ვტესტეთ თბილისურ ბინებში ერთი ზაფხულის განმავლობაში. ეს არის ის სამი, რომელიც ღირს.",
+      imgLabel: "tbilisi rooftop · summer",
+      href: "guide.html",
+    };
+
+    const sideCards = [
+      { tag: "ბრენდი",      title: "Hisense — ღირს თუ არა 2026-ში?", meta: "5 წუთის წასაკითხი",  href: "brand-hisense.html" },
+      { tag: "შედარება",   title: <><span className="latin">Hisense</span> vs <span className="latin">Gree</span></>, meta: "ხელით ვტესტავდით",       href: "compare.html" },
+    ];
+
+    const topPicks = [
+      { rank: "საუკეთესო საერთო",  name: "Hisense AS-09HR4",    reason: "ფასისა და სიჩუმის საუკეთესო ბალანსი.",          price: "699",   href: "guide.html" },
+      { rank: "ბიუჯეტური",         name: "Gree GWH09",          reason: "ყველაზე ხელმისაწვდომი ვარიანტი ბაზარზე.",       price: "549",   href: "guide.html" },
+      { rank: "პრემიუმი",          name: "Samsung WindFree",    reason: "ენერგო-ეფექტური, თითქმის უხმაუროდ მუშაობს.",    price: "1 199", href: "guide.html" },
+    ];
+
+    const guides = [
+      { tag: "გზამკვლევი",  title: "როგორ ავირჩიოთ BTU ბინისთვის",            dek: "ფართობი, ჭერი, ფანჯრები — სამი ფაქტორი.",        imgLabel: "btu calc",       initials: "ნჯ", author: "ნიკა ჯავახიშვილი", date: "10 მაისი", href: "guide.html" },
+      { tag: "ბრენდი",       title: "ჩინური ბრენდები — რომელი ღირს?",          dek: "Hisense, Gree, Midea — სამი ბრენდი ერთ კატეგორიაში.", imgLabel: "brands compared", initials: "სკ", author: "სოფო კუპრაშვილი",   date: "4 მაისი",  href: "brand-hisense.html" },
+      { tag: "მონტაჟი",      title: "მონტაჟი თბილისში: რა უნდა იცოდე",         dek: "ფასები, ნებართვები, რა იჩხუბება შენ შენობაში.",   imgLabel: "installation",   initials: "გჭ", author: "გიორგი ჭიჭინაძე",  date: "28 აპრილი", href: "#" },
+      { tag: "პრობლემები",   title: "კონდიციონერი არ აცივებს — რა ვქნათ?",    dek: "5 ხშირი მიზეზი და გადაჭრის გზები.",              imgLabel: "troubleshoot",   initials: "ნჯ", author: "ნიკა ჯავახიშვილი", date: "21 აპრილი", href: "#" },
+      { tag: "ენერგო",       title: "რამდენი ღირს კონდიციონერი თვეში?",       dek: "რეალური დენის გადასახადის გათვლა.",              imgLabel: "energy meter",   initials: "სკ", author: "სოფო კუპრაშვილი",   date: "15 აპრილი", href: "#" },
+      { tag: "შედარება",     title: <><span className="latin">Inverter</span> vs <span className="latin">On/Off</span></>,                             dek: "რა განასხვავებთ — და სად ჯობს თითოეული.",         imgLabel: "tech comparison", initials: "გჭ", author: "გიორგი ჭიჭინაძე",  date: "8 აპრილი",  href: "#" },
+    ];
+
+    const brands = [
+      { name: "Hisense",   href: "brand-hisense.html" },
+      { name: "Gree",      href: "#" },
+      { name: "Samsung",   href: "#" },
+      { name: "LG",        href: "#" },
+      { name: "Daikin",    href: "#" },
+      { name: "Mitsubishi",href: "#" },
+      { name: "Midea",     href: "#" },
+      { name: "Haier",     href: "#" },
+      { name: "Bosch",     href: "#" },
+      { name: "Toshiba",   href: "#" },
+      { name: "TCL",       href: "#" },
+      { name: "Electrolux",href: "#" },
+    ];
+
+    const faqs = [
+      { q: "როდის ღირს კონდიციონერის შეცვლა?",       a: "თუ კონდიციონერი 10 წელზე ძველია და სერვისიც ხშირად სჭირდება, შეცვლა უფრო რენტაბელურია, ვიდრე გაგრძელება." },
+      { q: "რომელი ფირმაა საუკეთესო?",               a: "არცერთი — ფირმა მნიშვნელოვანია, მაგრამ მთავარია კონკრეტული მოდელის სპეციფიკაცია, ფასი და ადგილობრივი სერვისი." },
+      { q: "რა ფასი აქვს მონტაჟს?",                   a: "სტანდარტული მონტაჟი თბილისში — 250–400 ლარი. ფასი იცვლება ტრასის სიგრძით, სართულის სიმაღლით." },
+      { q: "ინვერტერული თუ ჩვეულებრივი?",           a: "ინვერტერული — თითქმის ყოველთვის. 30% ნაკლები ენერგია, ნაკლები ხმაური, უფრო ხანგრძლივი მუშაობა." },
+      { q: "სად ვიყიდო თბილისში?",                   a: "ჩვენ ვუთანამშრომლებთ მეგატექნიკას (წერეთლის გამზ. 140) — მაგრამ ფასს ვადარებთ Extra.ge და ee.ge-სთანაც." },
+    ];
+
+    const App = () => (
+      <>
+        <Nav/>
+
+        <main>
+          <HeroSection feature={featureCard} side={sideCards}/>
+
+          <section className="kg-section">
+            <SectionHead title="ჩვენი არჩევანი ამ ზაფხულს" link={{ label: "სრული გზამკვლევი", href: "guide.html" }}/>
+            <TopPicksRow picks={topPicks}/>
+          </section>
+
+          <BtuStrip/>
+
+          <section className="kg-section">
+            <SectionHead title="გზამკვლევები" link={{ label: "ყველა გზამკვლევი", href: "#" }}/>
+            <GuideGrid items={guides}/>
+          </section>
+
+          <section className="kg-section" style={{ paddingTop: 0 }}>
+            <SectionHead title="ბრენდები" link={{ label: "ყველა ბრენდი", href: "#" }}/>
+            <BrandsGrid brands={brands}/>
+          </section>
+
+          <HomeFAQ items={faqs}/>
+
+          <TeamBlock/>
+        </main>
+
+        <Footer/>
+      </>
+    );
+
+    ReactDOM.createRoot(document.getElementById("root")).render(<App/>);
+  </script>
+</body>
+</html>
