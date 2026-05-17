@@ -15,11 +15,13 @@ const Footer = () => (
       <div>
         <h5>ნავიგაცია</h5>
         <ul>
-          <li><a href="#">გზამკვლევები</a></li>
-          <li><a href="#">ბრენდები</a></li>
-          <li><a href="#">BTU კალკულატორი</a></li>
-          <li><a href="#">ჩვენ შესახებ</a></li>
-          <li><a href="#">მეთოდოლოგია</a></li>
+          <li><a href="guides.html">გზამკვლევები</a></li>
+          <li><a href="best-of.html">საუკეთესო არჩევანი</a></li>
+          <li><a href="btu.html">BTU კალკულატორი</a></li>
+          <li><a href="about.html">ჩვენ შესახებ</a></li>
+          <li><a href="methodology.html">მეთოდოლოგია</a></li>
+          <li><a href="disclosure.html">გამჭვირვალობა</a></li>
+          <li><a href="privacy.html">კონფიდენციალობა</a></li>
         </ul>
       </div>
       <div>
@@ -33,7 +35,7 @@ const Footer = () => (
     </div>
     <div className="kg-footer-strip">
       <span className="small">© 2026 kondicionerebi.ge · ყველა უფლება დაცულია</span>
-      <span className="small">სტატიებში არსებული ზოგიერთი ბმული შესაძლოა აფილირებული იყოს გამყიდველებთან (მათ შორის მეგატექნიკასთან). რეკომენდაცია არ არის დამოკიდებული აფილაციაზე. <a href="#">სრული გამჭვირვალობა →</a></span>
+      <span className="small">სტატიებში არსებული ზოგიერთი ბმული შესაძლოა აფილირებული იყოს გამყიდველებთან (მათ შორის მეგატექნიკასთან). რეკომენდაცია არ არის დამოკიდებული აფილაციაზე. <a href="disclosure.html">სრული გამჭვირვალობა →</a></span>
     </div>
   </footer>
 );

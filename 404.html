@@ -1,0 +1,106 @@
+<!doctype html>
+<html lang="ka">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>გვერდი ვერ მოიძებნა — kondicionerebi.ge</title>
+  <link rel="stylesheet" href="/site.css">
+  <link rel="stylesheet" href="/site2.css">
+  <script src="https://unpkg.com/react@18.3.1/umd/react.development.js" integrity="sha384-hD6/rw4ppMLGNu3tX5cjIb+uRZ7UkRJ6BPkLpg4hAu/6onKUg4lLsHAs9EBPT82L" crossorigin="anonymous"></script>
+  <script src="https://unpkg.com/react-dom@18.3.1/umd/react-dom.development.js" integrity="sha384-u6aeetuaXnQ38mYT8rp6sbXaQe3NL9t+IBXmnYxwkUI2Hw4bsp2Wvmx4yRQF1uAm" crossorigin="anonymous"></script>
+  <script src="https://unpkg.com/@babel/standalone@7.29.0/babel.min.js" integrity="sha384-m08KidiNqLdpJqLq95G/LEi8Qvjl/xUYll3QILypMoQ65QorJ9Lvtp2RXYGBFj1y" crossorigin="anonymous"></script>
+  <style>
+    .kg-404 {
+      max-width: 640px;
+      margin: 0 auto;
+      padding: 96px 24px;
+      text-align: center;
+    }
+    .kg-404-code {
+      font-family: var(--font-latin);
+      font-size: 96px;
+      font-weight: 700;
+      color: var(--color-accent);
+      line-height: 1;
+      letter-spacing: -0.04em;
+      margin-bottom: 24px;
+      font-variant-numeric: tabular-nums;
+    }
+    .kg-404 h1 { margin: 0 0 16px; font-size: 30px; }
+    .kg-404 p { margin: 0 0 32px; color: var(--color-text-muted); font-size: 17px; line-height: 1.6; }
+    .kg-404-links {
+      display: grid;
+      grid-template-columns: repeat(3, 1fr);
+      gap: 12px;
+      margin-top: 32px;
+    }
+    .kg-404-link {
+      display: flex; flex-direction: column; align-items: center; gap: 8px;
+      padding: 20px 16px;
+      border: 1px solid var(--color-border);
+      border-radius: var(--radius-lg);
+      background: #fff;
+      text-decoration: none;
+      color: var(--color-primary);
+      font-weight: 600;
+      font-size: 15px;
+      transition: border-color var(--dur) var(--ease), box-shadow var(--dur) var(--ease);
+    }
+    .kg-404-link:hover {
+      border-color: var(--color-accent);
+      box-shadow: var(--shadow-card);
+      text-decoration: none;
+    }
+    .kg-404-link .small { color: var(--color-text-muted); font-weight: 400; font-size: 13px; }
+    @media (max-width: 720px) {
+      .kg-404 { padding: 48px 20px; }
+      .kg-404-code { font-size: 64px; }
+      .kg-404-links { grid-template-columns: 1fr; }
+    }
+  </style>
+</head>
+<body>
+  <div id="root"></div>
+
+  <script type="text/babel" src="/Icons.jsx"></script>
+  <script type="text/babel" src="/Nav.jsx"></script>
+  <script type="text/babel" src="/Footer.jsx"></script>
+
+  <script type="text/babel">
+    const App = () => (
+      <>
+        <Nav/>
+
+        <main className="kg-404">
+          <div className="kg-404-code">404</div>
+          <h1>გვერდი ვერ მოიძებნა</h1>
+          <p>გვერდი, რომელსაც ეძებთ, აღარ არსებობს ან გადატანილია. შესაძლოა, ბმული მოძველებულია — სცადეთ მთავარი გვერდიდან.</p>
+
+          <div className="kg-404-links">
+            <a href="/" className="kg-404-link">
+              მთავარი
+              <span className="small">დაიწყეთ თავიდან</span>
+            </a>
+            <a href="/guides.html" className="kg-404-link">
+              გზამკვლევები
+              <span className="small">სრული მიმოხილვები</span>
+            </a>
+            <a href="/btu.html" className="kg-404-link">
+              BTU კალკულატორი
+              <span className="small">სიმძლავრის გათვლა</span>
+            </a>
+          </div>
+
+          <p style={{ marginTop: 40, fontSize: 14 }}>
+            თუ ფიქრობთ, რომ ეს ბმული უნდა მუშაობდეს, გვაცნობეთ — <a href="mailto:info@kondicionerebi.ge">info@kondicionerebi.ge</a>
+          </p>
+        </main>
+
+        <Footer/>
+      </>
+    );
+
+    ReactDOM.createRoot(document.getElementById("root")).render(<App/>);
+  </script>
+</body>
+</html>

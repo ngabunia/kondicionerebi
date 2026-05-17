@@ -1,0 +1,111 @@
+<!doctype html>
+<html lang="ka">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>მეთოდოლოგია — kondicionerebi.ge</title>
+  <link rel="stylesheet" href="site.css">
+  <link rel="stylesheet" href="site2.css">
+  <script src="https://unpkg.com/react@18.3.1/umd/react.development.js" integrity="sha384-hD6/rw4ppMLGNu3tX5cjIb+uRZ7UkRJ6BPkLpg4hAu/6onKUg4lLsHAs9EBPT82L" crossorigin="anonymous"></script>
+  <script src="https://unpkg.com/react-dom@18.3.1/umd/react-dom.development.js" integrity="sha384-u6aeetuaXnQ38mYT8rp6sbXaQe3NL9t+IBXmnYxwkUI2Hw4bsp2Wvmx4yRQF1uAm" crossorigin="anonymous"></script>
+  <script src="https://unpkg.com/@babel/standalone@7.29.0/babel.min.js" integrity="sha384-m08KidiNqLdpJqLq95G/LEi8Qvjl/xUYll3QILypMoQ65QorJ9Lvtp2RXYGBFj1y" crossorigin="anonymous"></script>
+</head>
+<body>
+  <div id="root"></div>
+
+  <script type="text/babel" src="Icons.jsx"></script>
+  <script type="text/babel" src="Nav.jsx"></script>
+  <script type="text/babel" src="Footer.jsx"></script>
+
+  <script type="text/babel">
+    const App = () => (
+      <>
+        <Nav/>
+
+        <header className="kg-hub-header">
+          <div className="kg-page-inner">
+            <nav className="kg-crumb" aria-label="breadcrumb">
+              <a href="index.html">მთავარი</a>
+              <span className="kg-crumb-sep">›</span>
+              <span>მეთოდოლოგია</span>
+            </nav>
+            <h1>მეთოდოლოგია</h1>
+            <p>როგორ ვტესტავთ კონდიციონერებს — და რატომ ვენდობით უფრო რეალურ ბინებს, ვიდრე ლაბორატორიულ მონაცემებს.</p>
+          </div>
+        </header>
+
+        <main className="kg-article">
+          <section style={{ paddingTop: 48 }}>
+            <h2>რატომ არ ვენდობით ლაბორატორიულ მონაცემებს</h2>
+            <p>მწარმოებლების სპეციფიკაცია ბევრს გვეტყვის — BTU, ენერგო-კლასი, ხმაური. მაგრამ ეს რიცხვები იზომება იდეალურ პირობებში: 27°C გარეთ, 24°C შიგნით, კარგი იზოლაცია, ახალი ფილტრი. ცხელი თბილისური ზაფხული — 40°C გარეთ, ცემენტ-ლუქის ფასადი, 3 მეტრიანი ჭერი — ლაბორატორიულ პირობებში არ ხდება.</p>
+            <p>ჩვენ ვტესტავთ კონდიციონერებს რეალურ ბინებში რეალურ მცხოვრებლებთან. ეს ერთადერთი გზაა, რომ გავიგოთ — როგორ მუშაობს მოწყობილობა იმ პირობებში, რომელშიც თქვენ მას იყიდით.</p>
+          </section>
+
+          <section style={{ paddingTop: 32 }}>
+            <h2>ჩვენი ტესტ-ბინები</h2>
+            <p>ყოველი წელი ვირჩევთ ოთხ ბინას თბილისში, რომელიც ფარავს ქალაქის სხვადასხვა მიკრო-კლიმატს:</p>
+            <ul style={{ fontSize: 17, lineHeight: 1.85, paddingLeft: 24 }}>
+              <li><b>ვაკე</b> — ძველი შენობა, 60 კვ.მ, ჩრდილოეთ-ჩრდილოეთის ფასადი, კარგი იზოლაცია.</li>
+              <li><b>საბურთალო</b> — ახალი მშენებლობა, 45 კვ.მ, სამხრეთის ფასადი, დიდი ფანჯრები, ცხელი ოთახი.</li>
+              <li><b>დიდუბე</b> — საბჭოური სერია, 35 კვ.მ, ცუდი იზოლაცია, საშუალო ექსპოზიცია.</li>
+              <li><b>ისანი</b> — სტუდიო, 28 კვ.მ, აღმოსავლეთის ფასადი, 2.5 მ ჭერი.</li>
+            </ul>
+            <p>თითოეულ ბინაში მცხოვრებლები იყენებენ კონდიციონერს ისე, როგორც ჩვეულებრივ იყენებენ — დილით, საღამოს, ღამით. ჩვენ მხოლოდ ვაგროვებთ მონაცემებს.</p>
+          </section>
+
+          <section style={{ paddingTop: 32 }}>
+            <h2>რას ვზომავთ</h2>
+            <p>თითო მოდელისთვის ვაგროვებთ მონაცემებს ერთი ზაფხულის განმავლობაში (მაისი — სექტემბერი):</p>
+            <ul style={{ fontSize: 17, lineHeight: 1.85, paddingLeft: 24 }}>
+              <li><b>რეალური სიმძლავრე</b> — რამდენ ხანში აცივებს ოთახს 30°C-დან 24°C-მდე, ცხელ დღეებში.</li>
+              <li><b>ენერგო-მოხმარება</b> — Wh ციფრული მთვლელით, არა მწარმოებლის ეტიკეტიდან. ვადარებთ მესაკუთრის რეალურ გადასახადს.</li>
+              <li><b>ხმაური</b> — დეციბელ-მეტრით 1 მეტრის და 3 მეტრის მანძილზე, დღის და ღამის რეჟიმში.</li>
+              <li><b>მონტაჟი</b> — სირთულე, დრო, ფასი, საჭირო ნებართვები.</li>
+              <li><b>გარანტიის სამუშაო</b> — როცა პრობლემაა, რამდენ ხანში პასუხობს სერვისცენტრი და როგორ აგვარებს.</li>
+              <li><b>გრძელვადიანი საიმედოობა</b> — წინა წლების მოდელების მონაცემები, ფილტრების ცვლის ხარჯი.</li>
+            </ul>
+          </section>
+
+          <section style={{ paddingTop: 32 }}>
+            <h2>ჩვენი აღჭურვილობა</h2>
+            <p>ვცდილობთ, რომ რიცხვები იყოს დამოწმებადი. ვიყენებთ:</p>
+            <ul style={{ fontSize: 17, lineHeight: 1.85, paddingLeft: 24 }}>
+              <li><span className="latin">Testo 405i</span> — სიჩქარისა და ტემპერატურის ციფრული თერმოანემომეტრი.</li>
+              <li><span className="latin">UNI-T UT353</span> — დეციბელ-მეტრი, ±1.5 dB სიზუსტით.</li>
+              <li><span className="latin">Sonoff POW R2</span> — ენერგო-მთვლელი, აღწერს მინიმუმ-მაქსიმუმ-საშუალო Wh-ს.</li>
+              <li>ციფრული ჰიგრომეტრი ტენიანობის გასაზომად.</li>
+            </ul>
+          </section>
+
+          <section style={{ paddingTop: 32 }}>
+            <h2>როგორ ვადგენთ რეიტინგს</h2>
+            <p>კონდიციონერი არ არის ერთგანზომილებიანი პროდუქტი — „საუკეთესო“ დამოკიდებულია იმაზე, რა გჭირდებათ. ამიტომ ჩვენი რეიტინგი არ არის ერთიანი №1, არამედ კატეგორიული:</p>
+            <ul style={{ fontSize: 17, lineHeight: 1.85, paddingLeft: 24 }}>
+              <li><b>საუკეთესო საერთო</b> — ფასი/ხარისხის საუკეთესო ბალანსი საშუალო ბინისთვის.</li>
+              <li><b>ბიუჯეტური</b> — ყველაზე იაფი ვარიანტი, რომელიც ჯერ კიდევ რეკომენდირებულია.</li>
+              <li><b>პრემიუმი</b> — ენერგო-ეფექტური ან უხმაურო, ფასი მეორეხარისხოვანი.</li>
+              <li><b>დიდი სივრცისთვის</b> — 40+ კვ.მ, ღია გეგმარების ბინებისთვის.</li>
+            </ul>
+            <p>თუ მოდელი არც ერთ კატეგორიაში არ ხდება ლიდერი — მის შესახებ არ ვაკეთებთ რჩევას. „კარგი“ არ არის საკმარისი.</p>
+          </section>
+
+          <section style={{ paddingTop: 32 }}>
+            <h2>როდის ვაახლებთ</h2>
+            <p>გზამკვლევებს ვაახლებთ ყოველი წლის გაზაფხულზე, ახალი მოდელების გამოშვების და წინა წლის გამოცდილების ანალიზის შემდეგ. სტატიის ბოლოს ცხადია — „ბოლო განახლება: 17 მაისი 2026“.</p>
+            <p>თუ ბრენდი დახურა მოდელი ან გამოვიდა მნიშვნელოვანი პრობლემა — ვეჯახებით სტატიას ანონსით ან მთლიანად ვცვლით რჩევას.</p>
+          </section>
+
+          <section style={{ paddingTop: 32, paddingBottom: 64 }}>
+            <h2>კითხვები</h2>
+            <p>თუ გაქვთ შენიშვნა ჩვენი მეთოდოლოგიის შესახებ ან ფიქრობთ, რომ ერთ-ერთი ტესტი არასწორად ჩავატარეთ — დაგვიკავშირდით <a href="mailto:info@kondicionerebi.ge">info@kondicionerebi.ge</a>. ვცდილობთ ვიყოთ რეალისტი — ცდომილებები არსებობს და მათ აღმოვაჩენთ მხოლოდ მკითხველის შენიშვნებით.</p>
+          </section>
+        </main>
+
+        <Footer/>
+      </>
+    );
+
+    ReactDOM.createRoot(document.getElementById("root")).render(<App/>);
+  </script>
+</body>
+</html>
