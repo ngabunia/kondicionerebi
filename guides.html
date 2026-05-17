@@ -1,0 +1,231 @@
+<!doctype html>
+<html lang="ka">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>გზამკვლევები — kondicionerebi.ge</title>
+  <link rel="stylesheet" href="site.css">
+  <link rel="stylesheet" href="site2.css">
+  <script src="https://unpkg.com/react@18.3.1/umd/react.development.js" integrity="sha384-hD6/rw4ppMLGNu3tX5cjIb+uRZ7UkRJ6BPkLpg4hAu/6onKUg4lLsHAs9EBPT82L" crossorigin="anonymous"></script>
+  <script src="https://unpkg.com/react-dom@18.3.1/umd/react-dom.development.js" integrity="sha384-u6aeetuaXnQ38mYT8rp6sbXaQe3NL9t+IBXmnYxwkUI2Hw4bsp2Wvmx4yRQF1uAm" crossorigin="anonymous"></script>
+  <script src="https://unpkg.com/@babel/standalone@7.29.0/babel.min.js" integrity="sha384-m08KidiNqLdpJqLq95G/LEi8Qvjl/xUYll3QILypMoQ65QorJ9Lvtp2RXYGBFj1y" crossorigin="anonymous"></script>
+</head>
+<body>
+  <div id="root"></div>
+
+  <script type="text/babel" src="Icons.jsx"></script>
+  <script type="text/babel" src="Nav.jsx"></script>
+  <script type="text/babel" src="Footer.jsx"></script>
+  <script type="text/babel" src="HomeComponents.jsx"></script>
+
+  <script type="text/babel">
+    const { useState, useMemo } = React;
+
+    // Master guide collection — tagged by category
+    const ALL_GUIDES = [
+      // Featured / large
+      { id: 1, cat: "guides", featured: true,
+        tag: "გზამკვლევი",  title: "კონდიციონერი ბინისთვის 2026",        dek: "14 მოდელი ვტესტეთ თბილისურ ბინებში. ეს არის ის სამი, რომელიც ღირს.", imgLabel: "tbilisi rooftop · summer", initials: "ნჯ", author: "ნიკა ჯავახიშვილი", date: "17 მაისი 2026", read: "12 წთ", href: "guide.html" },
+      { id: 2, cat: "guides",
+        tag: "გზამკვლევი",  title: "როგორ ავირჩიოთ BTU ბინისთვის",            dek: "ფართობი, ჭერი, ფანჯრები — სამი ფაქტორი.",        imgLabel: "btu calculator",  initials: "ნჯ", author: "ნიკა ჯავახიშვილი", date: "10 მაისი 2026", read: "6 წთ", href: "#" },
+      { id: 3, cat: "guides",
+        tag: "გზამკვლევი",  title: "კონდიციონერი ოფისისთვის — რა განასხვავებთ", dek: "კომერციული მოხმარების სპეციფიკა და ფასი.",      imgLabel: "office space",    initials: "სკ", author: "სოფო კუპრაშვილი",   date: "3 მაისი 2026",  read: "8 წთ", href: "#" },
+
+      // Brands
+      { id: 4, cat: "brands",
+        tag: "ბრენდი",       title: "Hisense — ღირს თუ არა 2026-ში?",          dek: "სრული ბრენდ-ანალიზი ფასი, ხარისხი, სერვისი.",     imgLabel: "hisense brand",   initials: "სკ", author: "სოფო კუპრაშვილი",   date: "4 მაისი 2026",   read: "9 წთ", href: "brand-hisense.html" },
+      { id: 5, cat: "brands",
+        tag: "ბრენდი",       title: "Gree თბილისში — ღირს თუ არა?",            dek: "10 წლის ბაზრის მცველი — სად აპირებს მართალს.",   imgLabel: "gree brand",      initials: "გჭ", author: "გიორგი ჭიჭინაძე",  date: "27 აპრილი 2026", read: "7 წთ", href: "#" },
+      { id: 6, cat: "brands",
+        tag: "ბრენდი",       title: "Samsung WindFree-ის ფენომენი",            dek: "რეალურად განსხვავდება „უქარო“ რეჟიმი თუ მარკეტინგია?", imgLabel: "samsung windfree", initials: "ნჯ", author: "ნიკა ჯავახიშვილი", date: "18 აპრილი 2026", read: "10 წთ", href: "#" },
+
+      // Comparison
+      { id: 7, cat: "compare",
+        tag: "შედარება",     title: "Hisense vs Gree — ვინ მოიგებს?",          dek: "ორი ჩინური ბრენდი ერთ ფასკატეგორიაში.",          imgLabel: "vs comparison",   initials: "გჭ", author: "გიორგი ჭიჭინაძე",  date: "11 აპრილი 2026", read: "11 წთ", href: "compare.html" },
+      { id: 8, cat: "compare",
+        tag: "შედარება",     title: "Inverter vs On/Off — სამუდამოდ",         dek: "ენერგო, ხმაური, ხანგრძლივობა — სამივეში სხვაობა.", imgLabel: "tech comparison", initials: "სკ", author: "სოფო კუპრაშვილი",   date: "4 აპრილი 2026",  read: "5 წთ", href: "#" },
+
+      // Energy
+      { id: 9, cat: "energy",
+        tag: "ენერგო",       title: "რამდენი ღირს კონდიციონერი თვეში?",       dek: "რეალური დენის გადასახადის გათვლა საქართველოში.",   imgLabel: "energy meter",   initials: "სკ", author: "სოფო კუპრაშვილი",   date: "28 მარტი 2026", read: "6 წთ", href: "#" },
+      { id: 10, cat: "energy",
+        tag: "ენერგო",       title: "ენერგო-კლასები — რას ნიშნავს A++?",      dek: "EU-ს ენერგო-ეტიკეტი ქართულად.",                   imgLabel: "energy labels",   initials: "ნჯ", author: "ნიკა ჯავახიშვილი", date: "21 მარტი 2026", read: "4 წთ", href: "#" },
+
+      // Installation
+      { id: 11, cat: "install",
+        tag: "მონტაჟი",      title: "მონტაჟი თბილისში: რა უნდა იცოდე",         dek: "ფასები, ნებართვები, რა იჩხუბება შენ შენობაში.",   imgLabel: "installation",   initials: "გჭ", author: "გიორგი ჭიჭინაძე",  date: "14 მარტი 2026", read: "8 წთ", href: "#" },
+      { id: 12, cat: "install",
+        tag: "მონტაჟი",      title: "სად აპირებთ მიწიერ ერთეულს მონტაჟს?",     dek: "სამხრეთ ფასადი vs ჩრდილოეთი — სხვაობა იგრძნობა.", imgLabel: "outdoor unit",   initials: "სკ", author: "სოფო კუპრაშვილი",   date: "7 მარტი 2026",  read: "5 წთ", href: "#" },
+
+      // Problems
+      { id: 13, cat: "problems",
+        tag: "პრობლემები",   title: "კონდიციონერი არ აცივებს — რა ვქნათ?",    dek: "5 ხშირი მიზეზი და გადაჭრის გზები.",              imgLabel: "troubleshoot",   initials: "ნჯ", author: "ნიკა ჯავახიშვილი", date: "29 თებერვალი 2026", read: "6 წთ", href: "#" },
+      { id: 14, cat: "problems",
+        tag: "პრობლემები",   title: "უცნაური ხმაური კონდიციონერიდან",          dek: "კლანკი, წყნარი ფიხთი, ნაცარი — სხვადასხვა მიზეზი.", imgLabel: "noise issue",   initials: "გჭ", author: "გიორგი ჭიჭინაძე",  date: "22 თებერვალი 2026", read: "5 წთ", href: "#" },
+      { id: 15, cat: "problems",
+        tag: "პრობლემები",   title: "წყალი ჟონავს — სასწრაფო რჩევები",         dek: "5 წუთიანი დიაგნოსტიკა სანამ ტექნიკოსს გამოიძახებთ.", imgLabel: "leak issue", initials: "ნჯ", author: "ნიკა ჯავახიშვილი", date: "15 თებერვალი 2026", read: "4 წთ", href: "#" },
+    ];
+
+    const CATEGORIES = [
+      { id: "all",      label: "ყველა" },
+      { id: "guides",   label: "გზამკვლევები" },
+      { id: "brands",   label: "ბრენდები" },
+      { id: "compare",  label: "შედარება" },
+      { id: "energy",   label: "ენერგო" },
+      { id: "install",  label: "მონტაჟი" },
+      { id: "problems", label: "პრობლემები" },
+    ];
+
+    // Single guide card variant
+    const GuideCard = ({ g }) => (
+      <a href={g.href} className="kg-related-card">
+        <div className="kg-related-img">
+          <span className="kg-placeholder-label">{g.imgLabel}</span>
+        </div>
+        <div className="kg-related-body">
+          <span className="kg-pill-sm">{g.tag}</span>
+          <h4>{g.title}</h4>
+          <p>{g.dek}</p>
+          <div className="kg-guide-card-byline">
+            <div className="kg-guide-card-avatar">{g.initials}</div>
+            <span>{g.author}</span>
+            <span>·</span>
+            <span>{g.date}</span>
+            <span style={{ marginLeft: "auto" }}>{g.read}</span>
+          </div>
+        </div>
+      </a>
+    );
+
+    const App = () => {
+      const [active, setActive] = useState("all");
+
+      const counts = useMemo(() => {
+        const c = { all: ALL_GUIDES.length };
+        CATEGORIES.forEach(cat => {
+          if (cat.id !== "all") c[cat.id] = ALL_GUIDES.filter(g => g.cat === cat.id).length;
+        });
+        return c;
+      }, []);
+
+      const filtered = active === "all" ? ALL_GUIDES : ALL_GUIDES.filter(g => g.cat === active);
+      const featured = filtered.find(g => g.featured) || filtered[0];
+      const sideFeatures = filtered.filter(g => g !== featured).slice(0, 4);
+      const grid = filtered.filter(g => g !== featured).slice(4);
+
+      return (
+        <>
+          <Nav active="გზამკვლევები"/>
+
+          {/* Dark hub header */}
+          <header className="kg-hub-header">
+            <div className="kg-page-inner">
+              <nav className="kg-crumb" aria-label="breadcrumb">
+                <a href="index.html">მთავარი</a>
+                <span className="kg-crumb-sep">›</span>
+                <span>გზამკვლევები</span>
+              </nav>
+              <h1>გზამკვლევები</h1>
+              <p>ხელით ვტესტავთ — რეალურ ბინებში თბილისში. ყოველი გზამკვლევი ეფუძნება მინიმუმ 4 თვის გამოცდილებას.</p>
+              <div className="kg-hub-stats">
+                <div className="kg-hub-stat">
+                  <span className="v">{ALL_GUIDES.length}</span>
+                  <span className="l">გამოქვეყნებული გზამკვლევი</span>
+                </div>
+                <div className="kg-hub-stat">
+                  <span className="v">42</span>
+                  <span className="l">გატესტილი მოდელი</span>
+                </div>
+                <div className="kg-hub-stat">
+                  <span className="v">4</span>
+                  <span className="l">გუნდის წევრი</span>
+                </div>
+              </div>
+            </div>
+          </header>
+
+          <main className="kg-page">
+            {/* Filter pills */}
+            <div className="kg-filter-bar">
+              {CATEGORIES.map(c => (
+                <button key={c.id}
+                        className={"kg-filter-pill" + (active === c.id ? " active" : "")}
+                        onClick={() => setActive(c.id)}>
+                  {c.label}
+                  <span className="count">{counts[c.id]}</span>
+                </button>
+              ))}
+            </div>
+
+            {/* Featured row */}
+            {featured && (
+              <section className="kg-hub-featured">
+                <a href={featured.href} className="kg-hero-feature">
+                  <div className="kg-hero-feature-img">
+                    <span className="kg-placeholder-label">{featured.imgLabel}</span>
+                  </div>
+                  <div className="kg-hero-feature-body">
+                    <span className="kg-pill-sm">{featured.tag}</span>
+                    <h2 style={{ marginTop: 12 }}>{featured.title}</h2>
+                    <p>{featured.dek}</p>
+                    <div className="kg-guide-card-byline" style={{ borderTop: "none", paddingTop: 0, marginTop: 12 }}>
+                      <div className="kg-guide-card-avatar">{featured.initials}</div>
+                      <span>{featured.author}</span>
+                      <span>·</span>
+                      <span>{featured.date}</span>
+                      <span>·</span>
+                      <span>{featured.read}</span>
+                    </div>
+                    <span className="kg-hero-cta" style={{ marginTop: 16 }}>წაიკითხე <IconArrow size={14}/></span>
+                  </div>
+                </a>
+
+                <div className="kg-hub-featured-side">
+                  <div className="kg-hub-section-title">
+                    ბოლო გამოქვეყნებული
+                    <span>{active === "all" ? "ყველა კატეგორია" : CATEGORIES.find(c => c.id === active)?.label}</span>
+                  </div>
+                  {sideFeatures.map((g, i) => (
+                    <a key={g.id} href={g.href} className="kg-hub-mini">
+                      <div className="kg-hub-mini-num">{String(i + 2).padStart(2, "0")}</div>
+                      <div className="kg-hub-mini-body">
+                        <h4>{g.title}</h4>
+                        <span className="small">{g.tag} · {g.date} · {g.read}</span>
+                      </div>
+                    </a>
+                  ))}
+                </div>
+              </section>
+            )}
+
+            {/* Grid */}
+            {grid.length > 0 && (
+              <section style={{ paddingBottom: 64 }}>
+                <div className="kg-hub-section-title">
+                  ყველა გზამკვლევი
+                  <span>{filtered.length} {filtered.length === 1 ? "სტატია" : "სტატია"}</span>
+                </div>
+                <div className="kg-guide-grid">
+                  {grid.map(g => <GuideCard key={g.id} g={g}/>)}
+                </div>
+                <button className="kg-load-more">მეტი გზამკვლევის ჩვენება ↓</button>
+              </section>
+            )}
+
+            {/* Empty state if a category has only 0–4 items, no grid shown */}
+            {filtered.length === 0 && (
+              <section style={{ padding: "64px 0", textAlign: "center" }}>
+                <p className="muted">ამ კატეგორიაში ჯერ არ გვაქვს გამოქვეყნებული მასალა.</p>
+              </section>
+            )}
+          </main>
+
+          <Footer/>
+        </>
+      );
+    };
+
+    ReactDOM.createRoot(document.getElementById("root")).render(<App/>);
+  </script>
+</body>
+</html>
