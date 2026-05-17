@@ -10,7 +10,7 @@ const Footer = () => (
           <span>kondicionerebi<span style={{ color: "var(--color-accent)" }}>.ge</span></span>
         </div>
         <p className="kg-footer-tagline">დამოუკიდებელი მიმოხილვები კონდიციონერებზე — ქართულად.</p>
-        <p className="small">kondicionerebi.ge არის <b style={{color:"#fff"}}>მეგატექნიკის</b> გუნდის სპეციალიზებული საინფორმაციო რესურსი.</p>
+        <p className="small">kondicionerebi.ge არის დამოუკიდებელი საინფორმაციო რესურსი კონდიციონერების შესახებ.</p>
       </div>
       <div>
         <h5>ნავიგაცია</h5>
@@ -26,14 +26,14 @@ const Footer = () => (
         <h5>კონტაქტი</h5>
         <ul>
           <li>info@kondicionerebi.ge</li>
-          <li>წერეთლის გამზ. 140, თბილისი</li>
+          <li>თბილისი, საქართველო</li>
           <li><a href="#">Facebook</a> · <a href="#">Instagram</a> · <a href="#">YouTube</a></li>
         </ul>
       </div>
     </div>
     <div className="kg-footer-strip">
       <span className="small">© 2026 kondicionerebi.ge · ყველა უფლება დაცულია</span>
-      <span className="small">სტატიებში არსებული ბმულები შესაძლოა აფილირებული იყოს მეგატექნიკასთან. <a href="#">სრული გამჭვირვალობა →</a></span>
+      <span className="small">სტატიებში არსებული ზოგიერთი ბმული შესაძლოა აფილირებული იყოს გამყიდველებთან (მათ შორის მეგატექნიკასთან). რეკომენდაცია არ არის დამოკიდებული აფილაციაზე. <a href="#">სრული გამჭვირვალობა →</a></span>
     </div>
   </footer>
 );

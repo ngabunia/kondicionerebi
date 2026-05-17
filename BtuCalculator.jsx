@@ -418,7 +418,7 @@ const BtuCalculator = () => {
           }))}
         />
         <div className="kg-calc-cta-strip">
-          <p>ნახე ყველა <b>{formatBTU(btuClass)} BTU</b> კონდიციონერი — 30+ მოდელი მეგატექნიკაში.</p>
+          <p>ნახე ყველა <b>{formatBTU(btuClass)} BTU</b> კონდიციონერი — 30+ მოდელი მეგატექნიკაში, ფასების შედარება Extra.ge-სა და ee.ge-სთან.</p>
           <a href="#" className="kg-btn-primary">გადადი მაღაზიაში <IconArrow size={14}/></a>
         </div>
       </section>
