@@ -1,0 +1,103 @@
+<!doctype html>
+<html lang="ka">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>ჩვენ შესახებ — kondicionerebi.ge</title>
+  <link rel="stylesheet" href="site.css">
+  <link rel="stylesheet" href="site2.css">
+  <script src="https://unpkg.com/react@18.3.1/umd/react.development.js" integrity="sha384-hD6/rw4ppMLGNu3tX5cjIb+uRZ7UkRJ6BPkLpg4hAu/6onKUg4lLsHAs9EBPT82L" crossorigin="anonymous"></script>
+  <script src="https://unpkg.com/react-dom@18.3.1/umd/react-dom.development.js" integrity="sha384-u6aeetuaXnQ38mYT8rp6sbXaQe3NL9t+IBXmnYxwkUI2Hw4bsp2Wvmx4yRQF1uAm" crossorigin="anonymous"></script>
+  <script src="https://unpkg.com/@babel/standalone@7.29.0/babel.min.js" integrity="sha384-m08KidiNqLdpJqLq95G/LEi8Qvjl/xUYll3QILypMoQ65QorJ9Lvtp2RXYGBFj1y" crossorigin="anonymous"></script>
+</head>
+<body>
+  <div id="root"></div>
+
+  <script type="text/babel" src="Icons.jsx"></script>
+  <script type="text/babel" src="Nav.jsx"></script>
+  <script type="text/babel" src="Author.jsx"></script>
+  <script type="text/babel" src="Footer.jsx"></script>
+
+  <script type="text/babel">
+    const team = [
+      { initials: "ნჯ", name: "ნიკა ჯავახიშვილი", role: "მთავარი რედაქტორი · 6 წლის გამოცდილება",
+        bio: "ვტესტავ კონდიციონერებს რეალურ ბინებში თბილისში. ვწერ გრძელ მიმოხილვებსა და გზამკვლევებს — ფასიდან მონტაჟამდე." },
+      { initials: "სკ", name: "სოფო კუპრაშვილი", role: "ჟურნალისტი · ბრენდ-ანალიზი",
+        bio: "ვიკვლევ ბრენდებსა და ბაზრის ტენდენციებს. ვწერ ბრენდ-მიმოხილვებსა და შედარებებს — Hisense, Gree, Samsung, LG." },
+      { initials: "გჭ", name: "გიორგი ჭიჭინაძე", role: "ინჟინერი · მონტაჟი და სერვისი",
+        bio: "12 წლის გამოცდილება HVAC მონტაჟში. ვამოწმებ ტექნიკურ მახასიათებლებსა და ვიკვლევ პრობლემებს რეალურ ბინებში." },
+      { initials: "ლბ", name: "ლანა ბერიძე", role: "მონაცემთა ანალიტიკოსი",
+        bio: "ვაგროვებ ენერგო-მოხმარების და ხმაურის გაზომვებს. ვამოწმებ, რომ ჩვენი რეკომენდაცია ემყარება რეალურ რიცხვებს, არა მარკეტინგს." },
+    ];
+
+    const App = () => (
+      <>
+        <Nav active="ჩვენ შესახებ"/>
+
+        <header className="kg-hub-header">
+          <div className="kg-page-inner">
+            <nav className="kg-crumb" aria-label="breadcrumb">
+              <a href="index.html">მთავარი</a>
+              <span className="kg-crumb-sep">›</span>
+              <span>ჩვენ შესახებ</span>
+            </nav>
+            <h1>ჩვენ შესახებ</h1>
+            <p>ოთხი ადამიანის დამოუკიდებელი გუნდი. ვტესტავთ კონდიციონერებს რეალურ ბინებში თბილისში — არა ლაბორატორიაში.</p>
+            <div className="kg-hub-stats">
+              <div className="kg-hub-stat">
+                <span className="v">42</span>
+                <span className="l">გატესტილი მოდელი</span>
+              </div>
+              <div className="kg-hub-stat">
+                <span className="v">4</span>
+                <span className="l">ტესტ-ბინა თბილისში</span>
+              </div>
+              <div className="kg-hub-stat">
+                <span className="v">20+</span>
+                <span className="l">წლის გამოცდილება გუნდში</span>
+              </div>
+            </div>
+          </div>
+        </header>
+
+        <main className="kg-article">
+          <section style={{ paddingTop: 48 }}>
+            <h2>ჩვენი მისია</h2>
+            <p>kondicionerebi.ge არის დამოუკიდებელი საინფორმაციო რესურსი კონდიციონერების შესახებ. ჩვენი მიზანი მარტივია — დაგეხმაროთ აირჩიოთ სწორი მოდელი თქვენი ბინისთვის, ფასისა და სერვისის გათვალისწინებით.</p>
+            <p>ჩვენ არ ვართ მაღაზია და არ ვართ რომელიმე ბრენდის ოფიციალური დილერი. ვადარებთ ფასებს რამდენიმე გამყიდველთან და ვუთითებთ, სად ვიყიდიდით ჩვენ. დღეს ჩვენი მთავარი რეკომენდაცია არის <b>მეგატექნიკა</b> — ფასი, მონტაჟი და გარანტია ერთად. ფასებს ვადარებთ Extra.ge და ee.ge-სთანაც.</p>
+          </section>
+
+          <section style={{ paddingTop: 32 }}>
+            <h2>როგორ ვტესტავთ</h2>
+            <p>ყოველი წელი ვირჩევთ 12–18 ახალ მოდელს და ვამონტაჟებთ ოთხ ბინაში — ვაკეში, საბურთალოზე, დიდუბესა და ისანში. ერთი ზაფხულის განმავლობაში ვზომავთ:</p>
+            <ul style={{ fontSize: 17, lineHeight: 1.85, paddingLeft: 24 }}>
+              <li>რეალურ BTU-ს სიმძლავრეს ცხელ დღეებში (40°C გარეთ)</li>
+              <li>ენერგო-მოხმარებას მთვლელით — არა მწარმოებლის ეტიკეტიდან</li>
+              <li>ხმაურის დონეს ღამის რეჟიმში დეციბელ-მეტრით</li>
+              <li>მონტაჟის რთულობას და გარანტიის სამუშაო პრობლემურ მოდელებზე</li>
+            </ul>
+            <p>ეს არ არის ლაბორატორიული მონაცემები — ეს არის ცოცხალი თბილისის ბინების გამოცდილება.</p>
+          </section>
+
+          <section style={{ paddingTop: 32 }}>
+            <h2>ვინ ვართ ჩვენ</h2>
+            <div style={{ display: "flex", flexDirection: "column", gap: 16, marginTop: 24 }}>
+              {team.map((m, i) => <AuthorBio key={i} {...m}/>)}
+            </div>
+          </section>
+
+          <section style={{ padding: "48px 0 64px" }}>
+            <h2>გამჭვირვალობა</h2>
+            <p>როცა ვმუშაობთ რომელიმე გამყიდველთან აფილირებულ პროგრამაში, ეს ცხადად აღნიშნულია სტატიის ბოლოს. რეკომენდაცია არასოდეს არ არის დამოკიდებული აფილაციაზე — ჩვენი არჩევანი ემყარება ტესტ-მონაცემებსა და რეალურ მოხმარების გამოცდილებაზე.</p>
+            <p>თუ შეცდომა ნახეთ ან გაქვთ შენიშვნა — დაგვიკავშირდით <a href="mailto:info@kondicionerebi.ge">info@kondicionerebi.ge</a>.</p>
+          </section>
+        </main>
+
+        <Footer/>
+      </>
+    );
+
+    ReactDOM.createRoot(document.getElementById("root")).render(<App/>);
+  </script>
+</body>
+</html>

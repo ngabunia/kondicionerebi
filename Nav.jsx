@@ -3,8 +3,8 @@ const Nav = ({ active }) => {
   const items = [
     { label: "გზამკვლევები",       href: "guides.html" },
     { label: "საუკეთესო არჩევანი", href: "best-of.html" },
-    { label: "ჩვენ შესახებ",        href: "#" },
-    { label: "კონტაქტი",            href: "#" },
+    { label: "ჩვენ შესახებ",        href: "about.html" },
+    { label: "კონტაქტი",            href: "contact.html" },
   ];
   return (
     <nav className="kg-nav">

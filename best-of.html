@@ -1,0 +1,212 @@
+<!doctype html>
+<html lang="ka">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>საუკეთესო კონდიციონერი ბინისთვის 2026 — kondicionerebi.ge</title>
+  <link rel="stylesheet" href="site.css">
+  <link rel="stylesheet" href="site2.css">
+  <script src="https://unpkg.com/react@18.3.1/umd/react.development.js" integrity="sha384-hD6/rw4ppMLGNu3tX5cjIb+uRZ7UkRJ6BPkLpg4hAu/6onKUg4lLsHAs9EBPT82L" crossorigin="anonymous"></script>
+  <script src="https://unpkg.com/react-dom@18.3.1/umd/react-dom.development.js" integrity="sha384-u6aeetuaXnQ38mYT8rp6sbXaQe3NL9t+IBXmnYxwkUI2Hw4bsp2Wvmx4yRQF1uAm" crossorigin="anonymous"></script>
+  <script src="https://unpkg.com/@babel/standalone@7.29.0/babel.min.js" integrity="sha384-m08KidiNqLdpJqLq95G/LEi8Qvjl/xUYll3QILypMoQ65QorJ9Lvtp2RXYGBFj1y" crossorigin="anonymous"></script>
+</head>
+<body>
+  <div id="root"></div>
+
+  <script type="text/babel" src="Icons.jsx"></script>
+  <script type="text/babel" src="Nav.jsx"></script>
+  <script type="text/babel" src="ArticleHeader.jsx"></script>
+  <script type="text/babel" src="OurPick.jsx"></script>
+  <script type="text/babel" src="ComparisonTable.jsx"></script>
+  <script type="text/babel" src="FAQ.jsx"></script>
+  <script type="text/babel" src="Author.jsx"></script>
+  <script type="text/babel" src="Footer.jsx"></script>
+  <script type="text/babel" src="BestOfComponents.jsx"></script>
+
+  <script type="text/babel">
+    const tableHeaders = ["მოდელი", "BTU", "ენერგო", "ხმაური", "ფასი"];
+    const tableRows = [
+      { href: "#", cells: [{ v: "Hisense AS-09HR4" }, { v: "9 000" }, { v: "A++", best: true }, { v: "22 dB" }, { v: "699 ლ" }] },
+      { href: "#", cells: [{ v: "Gree GWH09" },        { v: "9 000" }, { v: "A+" },              { v: "26 dB" }, { v: "549 ლ", best: true }] },
+      { href: "#", cells: [{ v: "Samsung WindFree" },  { v: "9 000" }, { v: "A+++" },            { v: "19 dB", best: true }, { v: "1 199 ლ" }] },
+    ];
+
+    const summary = [
+      { label: "საუკეთესო საერთო",       name: "Hisense AS-09HR4",  anchor: "p1" },
+      { label: "ბიუჯეტური",              name: "Gree GWH09",        anchor: "p2" },
+      { label: "ენერგო-ეფექტური",        name: "Samsung WindFree",  anchor: "p3" },
+    ];
+
+    const faqs = [
+      { q: "რა BTU მჭირდება 25 კვ.მ ოთახისთვის?", a: "25 კვ.მ ოთახისთვის რეკომენდირებულია 9000–12000 BTU სიმძლავრის კონდიციონერი." },
+      { q: "რა გარანტიას უნდა ვითხოვო?",          a: "მინიმუმ 2 წელი მთლიან მოწყობილობაზე, 5 წელი კომპრესორზე." },
+      { q: "მონტაჟი შედის ფასში?",                 a: "ხშირად — არა. სტანდარტული მონტაჟი 250–400 ლარია, რომელიც ცალკე იხდება." },
+      { q: "რა განასხვავებთ ინვერტერულ კონდიციონერს?", a: "ინვერტერული მოდელი მუდმივად ცვლის სიმძლავრეს, რის გამოც 30%-ით ნაკლებ ენერგიას ხარჯავს." },
+    ];
+
+    const Pick = ({ num, label, anchor, model, reason, specs, price, oldPrice, pros, cons, who }) => (
+      <section id={anchor} style={{ marginTop: 64 }}>
+        <RankBadge num={num} label={label} title={model}/>
+        <OurPick
+          name={model} reason={reason} specs={specs}
+          price={price} oldPrice={oldPrice}
+          ctaLabel="ნახე მეგატექნიკაში" ctaHref="#"
+          alternatives="Extra.ge · ee.ge"
+        />
+        <p style={{ marginTop: 20, fontSize: 17, lineHeight: 1.75 }}>
+          {who.intro}
+        </p>
+        <ProsCons pros={pros} cons={cons}/>
+        <WhoBlock kind="buy" title="ვინ უნდა იყიდოს ეს მოდელი">{who.buy}</WhoBlock>
+      </section>
+    );
+
+    const specs1 = [
+      { icon: <IconTherm size={16}/>, label: "BTU",      value: "9 000" },
+      { icon: <IconCalc size={16}/>,  label: "ფართობი",  value: "25 კვ.მ" },
+      { icon: <IconLeaf size={16}/>,  label: "ენერგო",   value: "A++" },
+      { icon: <IconBolt size={16}/>,  label: "ხმაური",   value: "22 dB" },
+    ];
+
+    const App = () => (
+      <>
+        <Nav active="საუკეთესო არჩევანი"/>
+
+        <main>
+          <div className="kg-article">
+            <ArticleHeader
+              crumbs={[
+                { label: "მთავარი", href: "index.html" },
+                { label: "საუკეთესო არჩევანი", href: "#" },
+                { label: "კონდიციონერი ბინისთვის 2026" },
+              ]}
+              title="საუკეთესო კონდიციონერი ბინისთვის 2026"
+              dek="14 მოდელი, 6 თვის ტესტირება, რეალური ბინები თბილისში. ეს არის ის სამი, რომელიც ვალდებულია არსებობდეს ჩვენს რჩევაში."
+              authorInitials="ნჯ"
+              authorName="ნიკა ჯავახიშვილი"
+              authorRole="მთავარი რედაქტორი"
+              updated="17 მაისი 2026"
+              readTime="12 წუთის წასაკითხი"
+              heroCaption="ჩვენი ტესტ-ბინა ვაკეში. ზაფხული 2025."
+            />
+
+            <QuickSummary items={summary}/>
+
+            <h2 style={{ marginTop: 64, marginBottom: 16 }}>შედარების ცხრილი</h2>
+            <ComparisonTable headers={tableHeaders} rows={tableRows}/>
+
+            <section style={{ marginTop: 48, padding: "20px 24px", background: "var(--color-bg-alt)", borderRadius: 12 }}>
+              <h3 style={{ marginTop: 0, fontSize: 18 }}>როგორ ვტესტავთ</h3>
+              <p style={{ margin: 0, fontSize: 15, lineHeight: 1.7 }}>14 მოდელი 6 თვის განმავლობაში დავამონტაჟეთ ოთხ ბინაში თბილისში — ვაკეში, საბურთალოზე, დიდუბესა და ისანში. ვზომავდით BTU-ს რეალურ პირობებში, ხმაურის დონეს ღამის რეჟიმში, ენერგო-მოხმარებას მეტრით.</p>
+            </section>
+
+            <Pick
+              num="1" label="საუკეთესო საერთო" anchor="p1"
+              model="Hisense AS-09HR4"
+              reason="საუკეთესო ბალანსი ფასსა და სიჩუმეს შორის — საშუალო ბინისთვის სრულიად საკმარისი."
+              specs={specs1}
+              price="699" oldPrice="899"
+              who={{
+                intro: "Hisense AS-09HR4 არის ის მოდელი, რომელსაც ვუთვალისწინებთ მაშინ, როცა მეგობარი გვეკითხება „რომელი ვიყიდო?“ — ის არ არის ყველაზე იაფი, არც ყველაზე უხმაურო, მაგრამ არცერთ პარამეტრში არ მოატყუებს. სამი თვის უწყვეტი მუშაობის შემდეგ ჩვენი ტესტ-ბინაში არც დაშლა ჰქონია, არც ხმაური გაიზარდა, არც ენერგო-მოხმარება. ეს არის ის, რასაც ვუწოდებთ „ღირსეულ ნაგულისხმევ არჩევანს“.",
+                buy: "ვინც პირველად ყიდულობს კონდიციონერს, არ უნდა ბევრი ფიქრი ბრენდებზე და მხოლოდ ერთი მოდელი სჭირდება ბინისთვის. სამხრეთით მდებარე ოთახისთვის გადადით 12000 BTU მოდელზე.",
+              }}
+              pros={[
+                "სიჩუმე — 22 dB ღამის რეჟიმში",
+                "გარანტია 3 წელი მთლიან მოწყობილობაზე",
+                "ენერგო-კლასი A++ ფასს ამართლებს",
+                "მონტაჟი ფასში შედის მეგატექნიკაში",
+              ]}
+              cons={[
+                "ფილტრის შეცვლა 6 თვეში — საშუალო ფასი",
+                "WiFi აპლიკაცია მხოლოდ ინგლისურად",
+              ]}
+            />
+
+            <Pick
+              num="2" label="ბიუჯეტური" anchor="p2"
+              model="Gree GWH09"
+              reason="ყველაზე ხელმისაწვდომი ვარიანტი ბაზარზე — გონივრული კომპრომისი."
+              specs={[
+                { icon: <IconTherm size={16}/>, label: "BTU",     value: "9 000" },
+                { icon: <IconCalc size={16}/>,  label: "ფართობი", value: "25 კვ.მ" },
+                { icon: <IconLeaf size={16}/>,  label: "ენერგო",  value: "A+" },
+                { icon: <IconBolt size={16}/>,  label: "ხმაური",  value: "26 dB" },
+              ]}
+              price="549"
+              who={{
+                intro: "Gree GWH09 — გრძელვადიანი ბაზრის მცველი. ერთი მთავარი ნაკლი ენერგო-კლასია (A+ A++-ის ნაცვლად), თუმცა 150 ლარის ფასდაკლება ამ კონტრასტს კომპენსირებს რეალურ მოხმარებაში მინიმუმ 6–7 წლის განმავლობაში.",
+                buy: "მათ, ვისთვისაც ეს მეორე კონდიციონერია სახლში (მაგ. საძინებელი), ან გასაქირავებელი ბინისთვის. პრემიუმ ფუნქციები არ სჭირდება.",
+              }}
+              pros={[
+                "ფასი — 150 ლარით ნაკლები კონკურენტებზე",
+                "უხნოვან მონტაჟი, ხელმისაწვდომი ნაწილები",
+                "მარტივი ინტერფეისი",
+              ]}
+              cons={[
+                "ხმაური ღამის რეჟიმში — 26 dB (იგრძნობა)",
+                "ენერგო-კლასი A+ მხოლოდ",
+                "WiFi არ აქვს",
+              ]}
+            />
+
+            <Pick
+              num="3" label="ენერგო-ეფექტური" anchor="p3"
+              model="Samsung WindFree"
+              reason="ენერგო-ეფექტური, თითქმის უხმაუროდ მუშაობს — პრემიუმ ფასს ამართლებს."
+              specs={[
+                { icon: <IconTherm size={16}/>, label: "BTU",     value: "9 000" },
+                { icon: <IconCalc size={16}/>,  label: "ფართობი", value: "25 კვ.მ" },
+                { icon: <IconLeaf size={16}/>,  label: "ენერგო",  value: "A+++" },
+                { icon: <IconBolt size={16}/>,  label: "ხმაური",  value: "19 dB" },
+              ]}
+              price="1 199"
+              who={{
+                intro: "Samsung WindFree-ის მთავარი მახასიათებელი არის „უქარო“ რეჟიმი — სადაც ცივი ჰაერი არ ცემს პირდაპირ თქვენზე. ეს არ არის მარკეტინგი — ჩვენი ტესტში ნამდვილად განსხვავება იყო. ენერგო-კლასი A+++ წლის განმავლობაში 200–250 ლარს დაგიზოგავთ.",
+                buy: "ვინც ცხოვრობს ბინაში, რომელშიც კონდიციონერი ხშირად მუშაობს — საოფისე ბინა, საძინებელი, ან ცხელი სამხრეთის ოთახი.",
+              }}
+              pros={[
+                "Wind-Free რეჟიმი — არ შრება ჰაერი",
+                "ენერგო-კლასი A+++ წლების მანძილზე ჯდება",
+                "ხმაური 19 dB — თითქმის შეუმჩნეველი",
+                "5 წლის გარანტია კომპრესორზე",
+              ]}
+              cons={[
+                "ფასი — 500+ ლარით ძვირი ჩვეულებრივ მოდელებზე",
+                "მონტაჟი მოითხოვს გამოცდილ ტექნიკოსს",
+              ]}
+            />
+
+            <section style={{ marginTop: 80 }}>
+              <h2>ვინ უნდა აარიდოს ეს კატეგორია</h2>
+              <p style={{ fontSize: 17, lineHeight: 1.75, marginTop: 16 }}>
+                თუ ფართობი 35 კვადრატულ მეტრზე მეტია, 9000 BTU მოდელი არ გავა — გადადით 12000 ან 18000 BTU კატეგორიაზე.
+                ასევე, თუ ბინა მცირე ფართობის, მაგრამ მაღალი ჭერით (3.2 მ+) ან ცუდი იზოლაციით — გათვალეთ 20%-ით მეტი სიმძლავრე.
+              </p>
+              <WhoBlock kind="skip" title="არ ღირს — 5000 ლარზე ძვირი მოდელები სტანდარტული ბინისთვის">
+                პრემიუმ მოდელები (Daikin Emura, Mitsubishi MSZ-EF) ნამდვილად უკეთესია, მაგრამ ღირებულების უპირატესობა ხდება მხოლოდ კომერციული მოხმარების შემთხვევაში. ჩვეულებრივი ბინისთვის 1 500 ლარის ფარგლები საკმარისია.
+              </WhoBlock>
+            </section>
+
+            <section style={{ marginTop: 64 }}>
+              <FAQ items={faqs}/>
+            </section>
+
+            <div style={{ marginTop: 64 }}>
+              <AuthorBio
+                initials="ნჯ"
+                name="ნიკა ჯავახიშვილი"
+                role="მთავარი რედაქტორი · 6 წლის გამოცდილება კონდიციონერების ანალიზში"
+                bio="ვტესტავ კონდიციონერებს რეალურ ბინებში თბილისში. წინა სამსახური — Megatechnica-ს ტექნიკური მრჩეველი HVAC მიმართულებით."
+              />
+            </div>
+          </div>
+        </main>
+
+        <Footer/>
+      </>
+    );
+
+    ReactDOM.createRoot(document.getElementById("root")).render(<App/>);
+  </script>
+</body>
+</html>
