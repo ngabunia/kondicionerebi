@@ -1,0 +1,120 @@
+<!doctype html>
+<html lang="ka">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>კონდიციონერი ოფისისთვის — kondicionerebi.ge</title>
+  <link rel="stylesheet" href="site.css">
+  <link rel="stylesheet" href="site2.css">
+  <script src="https://unpkg.com/react@18.3.1/umd/react.development.js" integrity="sha384-hD6/rw4ppMLGNu3tX5cjIb+uRZ7UkRJ6BPkLpg4hAu/6onKUg4lLsHAs9EBPT82L" crossorigin="anonymous"></script>
+  <script src="https://unpkg.com/react-dom@18.3.1/umd/react-dom.development.js" integrity="sha384-u6aeetuaXnQ38mYT8rp6sbXaQe3NL9t+IBXmnYxwkUI2Hw4bsp2Wvmx4yRQF1uAm" crossorigin="anonymous"></script>
+  <script src="https://unpkg.com/@babel/standalone@7.29.0/babel.min.js" integrity="sha384-m08KidiNqLdpJqLq95G/LEi8Qvjl/xUYll3QILypMoQ65QorJ9Lvtp2RXYGBFj1y" crossorigin="anonymous"></script>
+</head>
+<body>
+  <div id="root"></div>
+
+  <script type="text/babel" src="Icons.jsx"></script>
+  <script type="text/babel" src="Nav.jsx"></script>
+  <script type="text/babel" src="ArticleHeader.jsx"></script>
+  <script type="text/babel" src="TLDR.jsx"></script>
+  <script type="text/babel" src="FAQ.jsx"></script>
+  <script type="text/babel" src="Author.jsx"></script>
+  <script type="text/babel" src="Footer.jsx"></script>
+
+  <script type="text/babel">
+    const tldr = [
+      { label: "მუშაობის რეჟიმი", text: 'ოფისი — <span class="latin">8–10</span> საათი დღეში, ბინა — <span class="latin">2–4</span>. სხვაობა მნიშვნელოვანია.' },
+      { label: "კომერციული მოდელი", text: 'პრემიუმ კომპრესორი ხანგრძლივი მუშაობისთვის — <span class="latin">+30%</span> ფასი, <span class="latin">2×</span> სიცოცხლე' },
+      { label: "ხმაური", text: 'ღია სამუშაო სივრცე — <span class="latin">25</span> dB ან ნაკლები' },
+      { label: "მონტაჟი", text: 'შესაძლოა საჭირო იყოს კომერციული ნებართვა (კონდიციონერი ფასადზე)' },
+    ];
+
+    const faqs = [
+      { q: "სტანდარტული საოფისე მოდელი ერგება?",
+        a: "კი, თუ ოფისი მცირეა (4–6 ადამიანი, 30–40 კვ.მ) და სამუშაო რეჟიმი არ აჭარბებს დღეში 8 საათს. დიდი გუნდისთვის ან 24/7 სერვერული ოთახისთვის — საჭიროა კომერციული მოდელი." },
+      { q: "რა გარანტიას ვითხოვო?",
+        a: "მთელ მოწყობილობაზე 3 წელი, კომპრესორზე 5 წელი. კომერციული მოდელებისთვის ცალკე გარანტიის პოლისი — ის ფარავს ბიზნეს-სამუშაო რეჟიმს." },
+      { q: "სითბური ტუმბო?",
+        a: "ოფისს ხშირად ცივი ჰაერი ზაფხულში და თბილი ზამთარში სჭირდება. სითბური ტუმბო (heat pump) გადასცემს ერთსავე მოწყობილობას — ენერგო-ეფექტურია 0°C-მდე." },
+    ];
+
+    const App = () => (
+      <>
+        <Nav active="გზამკვლევები"/>
+
+        <main>
+          <div className="kg-article">
+            <ArticleHeader
+              crumbs={[
+                { label: "მთავარი", href: "index.html" },
+                { label: "გზამკვლევები", href: "guides.html" },
+                { label: "კონდიციონერი ოფისისთვის" },
+              ]}
+              title="კონდიციონერი ოფისისთვის — რა განასხვავებთ"
+              dek="კომერციული მოხმარების სპეციფიკა, კომპრესორების ტიპები და როდის ჯობს კომერციული მოდელი ჩვეულებრივ ბინისთვის გაკეთებულზე."
+              authorInitials="სკ"
+              authorName="სოფო კუპრაშვილი"
+              authorRole="ჟურნალისტი · ბრენდ-ანალიზი"
+              updated="3 მაისი 2026"
+              readTime="8 წუთის წასაკითხი"
+              heroCaption="ღია სამუშაო სივრცე ვაკეში. ცივი ჰაერი, თანაბრად განაწილებული."
+            />
+
+            <TLDR items={tldr}/>
+
+            <section style={{ paddingTop: 48 }}>
+              <h2>რატომ არ ერგება „ბინის“ მოდელი</h2>
+              <p>ჩვეულებრივი 9000 BTU კონდიციონერი დაპროექტებულია 2–4 საათიანი მუშაობისთვის დღეში. ოფისში მუშაობს 8–10 საათი, 5 დღე კვირაში, 6–8 თვე წელიწადში. რეალურად — 2–3-ჯერ მეტი დატვირთვა.</p>
+              <p>შედეგი: კომპრესორი მცირდება ცხოვრების ვადით 5–7 წლიდან 3–4 წლამდე, ფილტრები იცვითებიან მცირე ხანში, სერვისის გამოძახება ხშირდება. ფარული ხარჯი ხშირად ფასი-ჩვეულებრივი + 30%-ით სერვისით.</p>
+            </section>
+
+            <section style={{ paddingTop: 32 }}>
+              <h2>კომერციული მოდელის უპირატესობები</h2>
+              <ul style={{ fontSize: 17, lineHeight: 1.85, paddingLeft: 24 }}>
+                <li><b>გაძლიერებული კომპრესორი</b> — დაპროექტებულია უწყვეტი მუშაობისთვის.</li>
+                <li><b>უკეთესი ფილტრაცია</b> — ოფისებში ხშირად საჭიროა HEPA ფილტრი ან ანტიბაქტერიული ფენა.</li>
+                <li><b>გაფართოებული გარანტია</b> — 3–5 წელი, რომელიც ფარავს ბიზნეს-მოხმარებას.</li>
+                <li><b>ჭკვიანი მართვა</b> — ცენტრალური მართვის სისტემა, რომელიც ჯდება ოფისის ბილდინგ-სისტემაში.</li>
+              </ul>
+            </section>
+
+            <section style={{ paddingTop: 32 }}>
+              <h2>როდის საკმარისია ჩვეულებრივი</h2>
+              <p>თუ ოფისი:</p>
+              <ul style={{ fontSize: 17, lineHeight: 1.85, paddingLeft: 24 }}>
+                <li>4–6 ადამიანი, 30 კვ.მ-მდე ფართობით</li>
+                <li>კონდიციონერი მუშაობს 6–7 საათი დღეში, არა 24/7</li>
+                <li>ბიუჯეტი 1 500 ლარის ფარგლებში</li>
+              </ul>
+              <p>— მაშინ ჩვეულებრივი მაღალი-ხარისხის მოდელი (Hisense, Samsung, Daikin) იქნება საკმარისი. ფასი/მუშაობის თანაფარდობა უკეთესია, ვიდრე ნახევრად-კომერციული მოდელის.</p>
+            </section>
+
+            <section style={{ paddingTop: 32 }}>
+              <h2>მონტაჟის თავისებურებები</h2>
+              <p>კომერციული ფასადი — დიდი ბიზნეს-ცენტრები ხშირად მოითხოვს დამატებით ნებართვებს კონდიციონერის გარე ბლოკის მონტაჟისთვის. შეამოწმეთ შენობის მართვის კომპანიასთან ჯერ კიდევ შესყიდვამდე.</p>
+              <p>ცენტრალური სისტემები (VRV/VRF) — დიდი ოფისებისთვის (200+ კვ.მ) ხშირად უფრო ეფექტიანი ერთიანი სისტემა, ვიდრე რამდენიმე ცალკეული მოწყობილობა. მონტაჟი 3–5-ჯერ ძვირი, მაგრამ ენერგო-მოხმარება და სერვისი მცირდება.</p>
+            </section>
+
+            <section style={{ paddingTop: 48 }}>
+              <FAQ items={faqs}/>
+            </section>
+
+            <div style={{ marginTop: 64 }}>
+              <AuthorBio
+                initials="სკ"
+                name="სოფო კუპრაშვილი"
+                role="ჟურნალისტი · 4 წლის გამოცდილება ბრენდ-ანალიზში"
+                bio="ვიკვლევ ბრენდებსა და ბაზრის ტენდენციებს. ვწერ შედარებებსა და ბრენდ-მიმოხილვებს, რომელიც ემყარება რეალურ ფასებსა და მკითხველის გამოცდილებას."
+              />
+            </div>
+          </div>
+        </main>
+
+        <Footer/>
+      </>
+    );
+
+    ReactDOM.createRoot(document.getElementById("root")).render(<App/>);
+  </script>
+</body>
+</html>

@@ -1,0 +1,126 @@
+<!doctype html>
+<html lang="ka">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>Gree თბილისში — ღირს თუ არა? — kondicionerebi.ge</title>
+  <link rel="stylesheet" href="site.css">
+  <link rel="stylesheet" href="site2.css">
+  <script src="https://unpkg.com/react@18.3.1/umd/react.development.js" integrity="sha384-hD6/rw4ppMLGNu3tX5cjIb+uRZ7UkRJ6BPkLpg4hAu/6onKUg4lLsHAs9EBPT82L" crossorigin="anonymous"></script>
+  <script src="https://unpkg.com/react-dom@18.3.1/umd/react-dom.development.js" integrity="sha384-u6aeetuaXnQ38mYT8rp6sbXaQe3NL9t+IBXmnYxwkUI2Hw4bsp2Wvmx4yRQF1uAm" crossorigin="anonymous"></script>
+  <script src="https://unpkg.com/@babel/standalone@7.29.0/babel.min.js" integrity="sha384-m08KidiNqLdpJqLq95G/LEi8Qvjl/xUYll3QILypMoQ65QorJ9Lvtp2RXYGBFj1y" crossorigin="anonymous"></script>
+</head>
+<body>
+  <div id="root"></div>
+
+  <script type="text/babel" src="Icons.jsx"></script>
+  <script type="text/babel" src="Nav.jsx"></script>
+  <script type="text/babel" src="ArticleHeader.jsx"></script>
+  <script type="text/babel" src="TLDR.jsx"></script>
+  <script type="text/babel" src="FAQ.jsx"></script>
+  <script type="text/babel" src="Author.jsx"></script>
+  <script type="text/babel" src="Footer.jsx"></script>
+
+  <script type="text/babel">
+    const tldr = [
+      { label: "ვერდიქტი", text: 'საუკეთესო ბიუჯეტური არჩევანი თბილისში — <span class="latin">150–200</span> ლარით ნაკლები კონკურენტებზე' },
+      { label: "ნაკლი", text: 'ხმაური <span class="latin">26</span> dB — იგრძნობა ღამის რეჟიმში' },
+      { label: "გარანტია", text: '<span class="latin">2</span> წელი მთლიან მოწყობილობაზე, <span class="latin">5</span> წელი კომპრესორზე' },
+      { label: "სად ვიყიდო", text: 'მეგატექნიკა — სრული ხაზი ხელმისაწვდომი' },
+    ];
+
+    const faqs = [
+      { q: "Gree ჩინური ბრენდია?",
+        a: "კი, Gree ჩინური კომპანიაა — მსოფლიოს ერთ-ერთი უდიდესი HVAC მწარმოებელი. Daikin-ის და Mitsubishi-ის შემდეგ მესამე ბაზრის წილით. ბევრი „ცნობილი“ ბრენდი (მათ შორის ევროპული) ფაქტობრივად Gree-ს მიერ იწარმოება." },
+      { q: "რომელი Gree მოდელი მირჩევთ?",
+        a: "GWH09 (9000 BTU) ბინისთვის 25 კვ.მ-მდე — საუკეთესო ფასი/ხარისხის ბალანსი. დიდი სივრცისთვის (35+ კვ.მ) — GWH12 (12000 BTU)." },
+      { q: "ხანგრძლივობა?",
+        a: "Gree-ს მთავარი უპირატესობაა მექანიკური საიმედოობა — კომპრესორი ხშირად 10+ წელს უძლებს. პლასტიკური ნაწილები (ფილტრის სარქველი, რემოტი) — საშუალო ხარისხის." },
+      { q: "WiFi და სმარტ-ფუნქციები?",
+        a: "Gree-ს მთავარი ნაკლი. ბიუჯეტურ მოდელებში WiFi არ არის, ხოლო პრემიუმ მოდელების აპლიკაცია (Ewpe Smart) მუშაობს არასტაბილურად. თუ WiFi აუცილებელია — Samsung ან Hisense." },
+    ];
+
+    const App = () => (
+      <>
+        <Nav active="გზამკვლევები"/>
+
+        <main>
+          <div className="kg-article">
+            <ArticleHeader
+              crumbs={[
+                { label: "მთავარი", href: "index.html" },
+                { label: "გზამკვლევები", href: "guides.html" },
+                { label: "Gree" },
+              ]}
+              title={<><span className="latin">Gree</span> თბილისში — ღირს თუ არა?</>}
+              dek="10 წლის ბაზრის მცველი — სად აპირებს მართალს და სად ჯობდა გვერდის გავლა. ფასი, ხანგრძლივობა, სერვისი."
+              authorInitials="გჭ"
+              authorName="გიორგი ჭიჭინაძე"
+              authorRole="ინჟინერი · მონტაჟი და სერვისი"
+              updated="27 აპრილი 2026"
+              readTime="7 წუთის წასაკითხი"
+              heroCaption="Gree GWH09 — ბაზრის ერთ-ერთი ყველაზე გავრცელებული მოდელი თბილისში."
+            />
+
+            <TLDR items={tldr}/>
+
+            <section style={{ paddingTop: 48 }}>
+              <h2>რა არის Gree</h2>
+              <p>Gree Electric Appliances — ჩინური HVAC მწარმოებელი, დაარსებული 1991 წელს. დღეს მსოფლიოს უდიდესი კონდიციონერების მწარმოებელია მოცულობით — წელიწადში 70+ მილიონი მოწყობილობა. ბევრი ცნობილი ბრენდი (მათ შორის Whirlpool, Carrier-ის ბიუჯეტური ხაზი) რეალურად Gree-ს მიერ იწარმოება.</p>
+              <p>თბილისში Gree დაახლოებით 2014 წლიდან ხელმისაწვდომია. დღეს ბაზრის ერთ-ერთი ლიდერი ბიუჯეტურ სეგმენტში — Hisense-სა და Midea-სთან ერთად.</p>
+            </section>
+
+            <section style={{ paddingTop: 32 }}>
+              <h2>სად აპირებს მართალს</h2>
+              <ul style={{ fontSize: 17, lineHeight: 1.85, paddingLeft: 24 }}>
+                <li><b>ფასი.</b> 9000 BTU მოდელი — 549 ლარი მეგატექნიკაში. იდენტური Hisense — 699, Samsung — 1199. სხვაობა მნიშვნელოვანია.</li>
+                <li><b>კომპრესორი.</b> Gree საკუთრივ აწარმოებს კომპრესორებს — ბევრი მსოფლიო ბრენდი მათგან ყიდულობს. ხანგრძლივობა საუკეთესოა ფასკატეგორიაში.</li>
+                <li><b>ხელმისაწვდომი ნაწილები.</b> ფილტრები, რემოტი, კონდენსატორი — ყველაფერი ხელმისაწვდომი თბილისში, ფასი ნორმალური.</li>
+                <li><b>მონტაჟი.</b> სტანდარტული, ნებისმიერი HVAC ტექნიკოსი იცის.</li>
+              </ul>
+            </section>
+
+            <section style={{ paddingTop: 32 }}>
+              <h2>სად ჯობდა გვერდის გავლა</h2>
+              <ul style={{ fontSize: 17, lineHeight: 1.85, paddingLeft: 24 }}>
+                <li><b>ხმაური.</b> ბიუჯეტური მოდელები 26–28 dB ღამის რეჟიმში — საძინებლისთვის იგრძნობა. Samsung WindFree-ის 19 dB-სთან შედარებით ეს ცხადია.</li>
+                <li><b>ენერგო-კლასი.</b> ბაზისური მოდელები A+ ენერგო-კლასით — A++ ან A+++-ისთვის Hisense ან Samsung ჯობს.</li>
+                <li><b>WiFi.</b> ბაზისურ მოდელებში არ არის. პრემიუმ მოდელების აპლიკაცია არასტაბილური.</li>
+                <li><b>დიზაინი.</b> ჩვეულებრივი, არცერთი მოდელი არ გამოირჩევა ვიზუალურად.</li>
+              </ul>
+            </section>
+
+            <section style={{ paddingTop: 32 }}>
+              <h2>ვისთვის</h2>
+              <p>Gree საუკეთესო არჩევანია იმათთვის, ვისთვისაც:</p>
+              <ul style={{ fontSize: 17, lineHeight: 1.85, paddingLeft: 24 }}>
+                <li>ფასი მთავარი ფაქტორია (გასაქირავებელი ბინა, მეორე ბინა, საძინებელი)</li>
+                <li>WiFi/აპლიკაცია არ არის აუცილებელი</li>
+                <li>ხანგრძლივობა მნიშვნელოვანია (5+ წლის გათვალისწინებით)</li>
+              </ul>
+              <p>თუ მთავარი მიზანი ფასკატეგორიის ქვედა მახასიათებლების მაქსიმუმია, Gree GWH09 — საუკეთესო არჩევანი 2026 წელს.</p>
+            </section>
+
+            <section style={{ paddingTop: 48 }}>
+              <FAQ items={faqs}/>
+            </section>
+
+            <div style={{ marginTop: 64 }}>
+              <AuthorBio
+                initials="გჭ"
+                name="გიორგი ჭიჭინაძე"
+                role="ინჟინერი · 12 წლის გამოცდილება HVAC მონტაჟში"
+                bio="12 წლის გამოცდილება HVAC მონტაჟში თბილისში. ვამოწმებ ტექნიკურ მახასიათებლებსა და ვიკვლევ პრობლემებს რეალურ ბინებში — არა მწარმოებლის სპეციფიკაციით."
+              />
+            </div>
+          </div>
+        </main>
+
+        <Footer/>
+      </>
+    );
+
+    ReactDOM.createRoot(document.getElementById("root")).render(<App/>);
+  </script>
+</body>
+</html>

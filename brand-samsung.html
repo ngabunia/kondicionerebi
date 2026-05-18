@@ -1,0 +1,127 @@
+<!doctype html>
+<html lang="ka">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>Samsung WindFree-ის ფენომენი — kondicionerebi.ge</title>
+  <link rel="stylesheet" href="site.css">
+  <link rel="stylesheet" href="site2.css">
+  <script src="https://unpkg.com/react@18.3.1/umd/react.development.js" integrity="sha384-hD6/rw4ppMLGNu3tX5cjIb+uRZ7UkRJ6BPkLpg4hAu/6onKUg4lLsHAs9EBPT82L" crossorigin="anonymous"></script>
+  <script src="https://unpkg.com/react-dom@18.3.1/umd/react-dom.development.js" integrity="sha384-u6aeetuaXnQ38mYT8rp6sbXaQe3NL9t+IBXmnYxwkUI2Hw4bsp2Wvmx4yRQF1uAm" crossorigin="anonymous"></script>
+  <script src="https://unpkg.com/@babel/standalone@7.29.0/babel.min.js" integrity="sha384-m08KidiNqLdpJqLq95G/LEi8Qvjl/xUYll3QILypMoQ65QorJ9Lvtp2RXYGBFj1y" crossorigin="anonymous"></script>
+</head>
+<body>
+  <div id="root"></div>
+
+  <script type="text/babel" src="Icons.jsx"></script>
+  <script type="text/babel" src="Nav.jsx"></script>
+  <script type="text/babel" src="ArticleHeader.jsx"></script>
+  <script type="text/babel" src="TLDR.jsx"></script>
+  <script type="text/babel" src="FAQ.jsx"></script>
+  <script type="text/babel" src="Author.jsx"></script>
+  <script type="text/babel" src="Footer.jsx"></script>
+
+  <script type="text/babel">
+    const tldr = [
+      { label: "WindFree რეჟიმი", text: 'რეალურად მუშაობს — ცივი ჰაერი არ ცემს პირდაპირ, ენერგო ეკონომიასაც გვაძლევს' },
+      { label: "ფასი", text: 'პრემიუმ მოდელი — <span class="latin">1 199</span> ლარიდან, ჩვეულებრივ <span class="latin">2×</span> ბიუჯეტურ ვარიანტებზე' },
+      { label: "ხმაური", text: '<span class="latin">19</span> dB — თითქმის შეუმჩნეველი ღამის რეჟიმში' },
+      { label: "ენერგო-კლასი", text: '<span class="latin">A+++</span> — წლის განმავლობაში <span class="latin">200–250</span> ლარის ეკონომია' },
+    ];
+
+    const faqs = [
+      { q: "WindFree მართლა მუშაობს თუ მარკეტინგია?",
+        a: "მუშაობს. პრინციპი მარტივი — გრილი ჰაერი გადადის 23 000 პატარა ხვრელის გავლით, რომელიც გაფანტავს მას ნელა და თანაბრად. რეალურად არ ცემს კანზე, არ შრება ჰაერი. ჩვენი ტესტ-ბინაში სხვაობა ცხადი იყო." },
+      { q: "WiFi და SmartThings აპლიკაცია?",
+        a: "Samsung-ის SmartThings მუშაობს კარგად — ერთ-ერთი საუკეთესოა ბაზრზე. დისტანციური მართვა, განრიგი, ენერგო-მონიტორინგი, ხმოვანი ასისტენტი (Bixby, Google Assistant). ბევრად უკეთესი ვიდრე Gree-ს ან Hisense-ის." },
+      { q: "მონტაჟი რთულია?",
+        a: "უფრო რთული ჩვეულებრივ მოდელებზე — დიდი ხვრელიანი პანელის გამო ფრთხილი ხელია საჭირო. რეკომენდირებულია Samsung-ის სერტიფიცირებული ტექნიკოსი ან გამოცდილი HVAC მონტიორი." },
+      { q: "ფასი ამართლებს?",
+        a: "თუ კონდიციონერი მუშაობს დღეში 6+ საათი — კი. A+++ ენერგო-კლასი წლის განმავლობაში 200+ ლარს დაგიზოგავთ. 5 წელში 1 000+ ლარის ეკონომია ფასის სხვაობას ფარავს. თუ მუშაობს იშვიათად — ბიუჯეტური ვარიანტი უფრო რენტაბელურია." },
+    ];
+
+    const App = () => (
+      <>
+        <Nav active="გზამკვლევები"/>
+
+        <main>
+          <div className="kg-article">
+            <ArticleHeader
+              crumbs={[
+                { label: "მთავარი", href: "index.html" },
+                { label: "გზამკვლევები", href: "guides.html" },
+                { label: "Samsung WindFree" },
+              ]}
+              title={<><span className="latin">Samsung WindFree</span>-ის ფენომენი</>}
+              dek="„უქარო“ რეჟიმი — მარკეტინგი თუ რეალური ტექნოლოგია? ვტესტეთ ერთი ზაფხულის განმავლობაში. შედეგი — გასაკვირი."
+              authorInitials="ნჯ"
+              authorName="ნიკა ჯავახიშვილი"
+              authorRole="მთავარი რედაქტორი"
+              updated="18 აპრილი 2026"
+              readTime="10 წუთის წასაკითხი"
+              heroCaption="Samsung WindFree AR09 — 23 000 პატარა ხვრელი, რომელიც ცვლის გრილი ჰაერის გავრცელებას."
+            />
+
+            <TLDR items={tldr}/>
+
+            <section style={{ paddingTop: 48 }}>
+              <h2>რა არის WindFree</h2>
+              <p>2018 წელს Samsung-მა გამოუშვა WindFree ტექნოლოგიის პირველი მოდელი. პრინციპი: ნაცვლად ერთიანი ფართო პანელის, რომელიც ცივ ჰაერს ცხელ ოთახში ცემს, მოწყობილობას აქვს <b>23 000 პატარა ხვრელი</b>, რომელიც გაფანტავს ჰაერს ნელა და თანაბრად.</p>
+              <p>თეორიულად — ჰაერი ისე ცივდება, რომ ცივი დინება არ იგრძნობა. ერთ-ერთი მთავარი პრობლემა კონდიციონერების — ცივი ჰაერი პირდაპირ კანზე — გვერდის გავლაა.</p>
+            </section>
+
+            <section style={{ paddingTop: 32 }}>
+              <h2>რეალური ტესტი</h2>
+              <p>ჩვენ Samsung AR09TXFCAWKNEU მონტაჟი ვაკეში მდებარე ბინაში (28 კვ.მ, სამხრეთის ფასადი). 4 თვის ტესტირების შემდეგ — შემდეგი დასკვნები:</p>
+              <ul style={{ fontSize: 17, lineHeight: 1.85, paddingLeft: 24 }}>
+                <li><b>WindFree მუშაობს.</b> საწყისი 15 წუთი ჩვეულებრივი რეჟიმი ცივდება ოთახს, შემდეგ ავტომატურად გადადის WindFree-ზე. ცივი დინება ცხადია ნაკლები, თუმცა ოთახი მოშვებულად რჩება ცივი.</li>
+                <li><b>ენერგო-მოხმარება.</b> 30% ნაკლები კონკურენტებზე. ჩვენი მთვლელის მონაცემები: 4 თვის განმავლობაში 87 კვტ/სთ — Hisense AS-09HR4 იმავე პერიოდში 124 კვტ/სთ.</li>
+                <li><b>ხმაური.</b> 19 dB — რეალურად შეუმჩნეველი. ღამის რეჟიმში სმაც ვერ ვიგრძენი.</li>
+                <li><b>აპლიკაცია.</b> SmartThings მუშაობს კარგად. იხსნება ხმოვანი კონტროლი, განრიგი, გეო-ფენსინგი.</li>
+              </ul>
+            </section>
+
+            <section style={{ paddingTop: 32 }}>
+              <h2>ნაკლი</h2>
+              <ul style={{ fontSize: 17, lineHeight: 1.85, paddingLeft: 24 }}>
+                <li><b>ფასი.</b> 1 199 ლარი — ბევრად ძვირი Gree-ზე (549) ან Hisense-ზე (699). ფასი ფარავს თავის თავს მხოლოდ ხშირი მოხმარების შემთხვევაში.</li>
+                <li><b>გრილების სიჩქარე.</b> WindFree რეჟიმში ცივდება ნელა — გრცელი ცხელი დღის შემდეგ ბინაში მისვლა და ცივ რეჟიმზე გადასვლა ხანდახან მაგრად საჭიროა.</li>
+                <li><b>გაუმართაობების ფასი.</b> 23 000 ხვრელიანი პანელის გაწმენდა და სერვისი 2–3-ჯერ ძვირი ჩვეულებრივ მოდელებზე.</li>
+              </ul>
+            </section>
+
+            <section style={{ paddingTop: 32 }}>
+              <h2>ვინ უნდა იყიდოს</h2>
+              <p>Samsung WindFree საუკეთესო არჩევანია მათთვის, ვინც:</p>
+              <ul style={{ fontSize: 17, lineHeight: 1.85, paddingLeft: 24 }}>
+                <li>კონდიციონერს იყენებს ხშირად (დღეში 6+ საათი) — ენერგო ეკონომია ფარავს ფასს</li>
+                <li>აქვს ცხელი სამხრეთის ფასადი ან საოფისე ბინა</li>
+                <li>აფასებს სიჩუმეს — საძინებლისთვის უპირატესობა მნიშვნელოვანია</li>
+                <li>იყენებს სმარტ-ფუნქციებს (ხმოვანი მართვა, განრიგი)</li>
+              </ul>
+              <p>თუ ბიუჯეტი მთავარია ან კონდიციონერი იშვიათად მუშაობს — Hisense ან Gree საუკეთესო არჩევანი.</p>
+            </section>
+
+            <section style={{ paddingTop: 48 }}>
+              <FAQ items={faqs}/>
+            </section>
+
+            <div style={{ marginTop: 64 }}>
+              <AuthorBio
+                initials="ნჯ"
+                name="ნიკა ჯავახიშვილი"
+                role="მთავარი რედაქტორი · 6 წლის გამოცდილება კონდიციონერების ანალიზში"
+                bio="ვტესტავ კონდიციონერებს რეალურ ბინებში თბილისში. ვცდილობ, რომ ყოველი რეკომენდაცია იყოს გამოცდილების შედეგი, არა მარკეტინგული მასალის გადათარგმნა."
+              />
+            </div>
+          </div>
+        </main>
+
+        <Footer/>
+      </>
+    );
+
+    ReactDOM.createRoot(document.getElementById("root")).render(<App/>);
+  </script>
+</body>
+</html>

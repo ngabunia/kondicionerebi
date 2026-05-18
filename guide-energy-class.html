@@ -1,0 +1,138 @@
+<!doctype html>
+<html lang="ka">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>ენერგო-კლასები — რას ნიშნავს A++? — kondicionerebi.ge</title>
+  <link rel="stylesheet" href="site.css">
+  <link rel="stylesheet" href="site2.css">
+  <script src="https://unpkg.com/react@18.3.1/umd/react.development.js" integrity="sha384-hD6/rw4ppMLGNu3tX5cjIb+uRZ7UkRJ6BPkLpg4hAu/6onKUg4lLsHAs9EBPT82L" crossorigin="anonymous"></script>
+  <script src="https://unpkg.com/react-dom@18.3.1/umd/react-dom.development.js" integrity="sha384-u6aeetuaXnQ38mYT8rp6sbXaQe3NL9t+IBXmnYxwkUI2Hw4bsp2Wvmx4yRQF1uAm" crossorigin="anonymous"></script>
+  <script src="https://unpkg.com/@babel/standalone@7.29.0/babel.min.js" integrity="sha384-m08KidiNqLdpJqLq95G/LEi8Qvjl/xUYll3QILypMoQ65QorJ9Lvtp2RXYGBFj1y" crossorigin="anonymous"></script>
+</head>
+<body>
+  <div id="root"></div>
+
+  <script type="text/babel" src="Icons.jsx"></script>
+  <script type="text/babel" src="Nav.jsx"></script>
+  <script type="text/babel" src="ArticleHeader.jsx"></script>
+  <script type="text/babel" src="TLDR.jsx"></script>
+  <script type="text/babel" src="ComparisonTable.jsx"></script>
+  <script type="text/babel" src="FAQ.jsx"></script>
+  <script type="text/babel" src="Author.jsx"></script>
+  <script type="text/babel" src="Footer.jsx"></script>
+
+  <script type="text/babel">
+    const tldr = [
+      { label: "EU ეტიკეტი", text: 'ერთიანი ენერგო-კლასი მთელ ევროპაში — <span class="latin">A+++</span>-დან <span class="latin">D</span>-მდე' },
+      { label: "SEER და SCOP", text: 'სეზონური ეფექტურობა გრილებისთვის (SEER) და გათბობისთვის (SCOP)' },
+      { label: "A++ ნიშნავს", text: '<span class="latin">SEER ≥ 6.1</span> — წელიწადში <span class="latin">~15%</span> ნაკლები ენერგია A+-სთან შედარებით' },
+      { label: "რეალური სხვაობა", text: 'A+ → A+++ ეკონომია <span class="latin">300-400</span> ლარი წელიწადში ხშირი მოხმარებისას' },
+    ];
+
+    const tableHeaders = ["კლასი", "SEER", "ენერგო-ეფექტურობა", "შესაბამისი ფასი (9000 BTU)"];
+    const tableRows = [
+      { href: "#", cells: [{ v: "A+++" }, { v: "≥ 8.5", best: true }, { v: "უმაღლესი" }, { v: "1100-1500 ლ" }] },
+      { href: "#", cells: [{ v: "A++" }, { v: "6.1-8.5" }, { v: "ძალიან მაღალი" }, { v: "650-900 ლ" }] },
+      { href: "#", cells: [{ v: "A+" }, { v: "5.6-6.1" }, { v: "მაღალი" }, { v: "500-650 ლ" }] },
+      { href: "#", cells: [{ v: "A" }, { v: "5.1-5.6" }, { v: "საშუალო" }, { v: "400-500 ლ" }] },
+      { href: "#", cells: [{ v: "B" }, { v: "4.6-5.1" }, { v: "დაბალი" }, { v: "350-450 ლ" }] },
+    ];
+
+    const faqs = [
+      { q: "SEER რა არის?",
+        a: "SEER = Seasonal Energy Efficiency Ratio. გრილების სეზონური ეფექტურობა — გასცემს რამდენი ერთეული გრილების სითბო ერთ ერთეულ ენერგო-მოხმარებაზე. რაც მაღალია, უფრო ეფექტურია. A++ ნიშნავს SEER ≥ 6.1." },
+      { q: "SCOP და SEER-ის სხვაობა?",
+        a: "SCOP = Seasonal Coefficient of Performance — გათბობის სეზონური ეფექტურობა. SEER არის გრილებისთვის, SCOP გათბობისთვის. თუ კონდიციონერი ზამთარშიც გამოიყენება — SCOP მნიშვნელოვანი." },
+      { q: "A+++ ფასი ამართლებს?",
+        a: "თუ კონდიციონერი დღეში 6+ საათი მუშაობს — კი. ენერგო ეკონომია A+-სთან შედარებით 300-400 ლარი წელიწადში. 4-5 წელში ფასი ფარდდება. იშვიათი მოხმარებისთვის (იშვიათად მხურვალე დღეები, შაბათ-კვირა მხოლოდ) — A+ ან A++ საკმარისი." },
+      { q: "B კლასი ჯერ კიდევ იყიდება?",
+        a: "EU-ში არა (2021 წლის რეგულაცია მოითხოვს A+ მინიმუმს). საქართველოს ბაზარზე ჯერ კიდევ ნახავთ ძველ მარაგებში — გვერდი აარიდეთ, თუნდაც ფასი ცდუნებელია." },
+    ];
+
+    const App = () => (
+      <>
+        <Nav active="გზამკვლევები"/>
+
+        <main>
+          <div className="kg-article">
+            <ArticleHeader
+              crumbs={[
+                { label: "მთავარი", href: "index.html" },
+                { label: "გზამკვლევები", href: "guides.html" },
+                { label: "ენერგო-კლასები" },
+              ]}
+              title="ენერგო-კლასები — რას ნიშნავს A++?"
+              dek="EU-ს ენერგო-ეტიკეტი ქართულად. SEER, SCOP, რეალური ფასი — და როდის ღირს ძვირი მოდელის ფასი."
+              authorInitials="ნჯ"
+              authorName="ნიკა ჯავახიშვილი"
+              authorRole="მთავარი რედაქტორი"
+              updated="21 მარტი 2026"
+              readTime="4 წუთის წასაკითხი"
+              heroCaption="EU ენერგო-ეტიკეტი — ერთიანი სტანდარტი 27 ქვეყანაში."
+            />
+
+            <TLDR items={tldr}/>
+
+            <section style={{ paddingTop: 48 }}>
+              <h2>რა არის ენერგო-ეტიკეტი</h2>
+              <p>EU-ს ენერგო-ეტიკეტი — ერთიანი სტანდარტი, რომელიც ფარავს 27 ქვეყანას. შემოღებულია 1992 წელს, ბოლო რეფორმა 2021 წელს. კონდიციონერებისთვის გრადაცია:</p>
+              <p><b>A+++</b> (უმაღლესი) → <b>A++</b> → <b>A+</b> → <b>A</b> → <b>B</b> → <b>C</b> → <b>D</b> (ყველაზე ცუდი)</p>
+              <p>დღევანდელ ბაზრზე — თითქმის ყველა მოდელი A+ ან უკეთესი. EU-ს რეგულაცია მოითხოვს მინიმუმ A+ ენერგო-კლასს.</p>
+            </section>
+
+            <section style={{ paddingTop: 32 }}>
+              <h2>კლასების ცხრილი</h2>
+              <ComparisonTable headers={tableHeaders} rows={tableRows}/>
+            </section>
+
+            <section style={{ paddingTop: 32 }}>
+              <h2>რეალური სხვაობა</h2>
+              <p>დავუშვათ, 9000 BTU კონდიციონერი მუშაობს 6 საათი დღეში, 4 თვე წელიწადში:</p>
+              <ul style={{ fontSize: 17, lineHeight: 1.85, paddingLeft: 24 }}>
+                <li><b>A+ მოდელი</b> — 720 კვტ წელიწადში — 216 ლარი ენერგო ხარჯი</li>
+                <li><b>A++ მოდელი</b> — 540 კვტ წელიწადში — 162 ლარი (-54 ლარი / -25%)</li>
+                <li><b>A+++ მოდელი</b> — 432 კვტ წელიწადში — 130 ლარი (-86 ლარი / -40%)</li>
+              </ul>
+              <p>5 წელში: A+ → A+++ ეკონომია 430 ლარი. ფასი სხვაობა საწყისად — დაახლოებით 400-500 ლარი. ფარდდება მე-5 წელს.</p>
+            </section>
+
+            <section style={{ paddingTop: 32 }}>
+              <h2>როდის ღირს ფასი</h2>
+              <p>A+++ ფასი მართალია, თუ:</p>
+              <ul style={{ fontSize: 17, lineHeight: 1.85, paddingLeft: 24 }}>
+                <li>კონდიციონერი მუშაობს ხშირად (6+ საათი დღეში)</li>
+                <li>გეგმავთ მინიმუმ 5 წლის გამოყენებას</li>
+                <li>ცხელი ფასადი ან ცუდი იზოლაცია (კონდიციონერი დატვირთული)</li>
+              </ul>
+              <p>A+ მოდელი საკმარისია, თუ:</p>
+              <ul style={{ fontSize: 17, lineHeight: 1.85, paddingLeft: 24 }}>
+                <li>კონდიციონერი იშვიათად მუშაობს (აქა-იქ, ხანდახან)</li>
+                <li>ბიუჯეტი მთავარია საწყის ფასზე</li>
+                <li>გასაქირავებელი ბინა (ფასი მთავარია, არა გრძელვადიანი ეკონომია)</li>
+              </ul>
+            </section>
+
+            <section style={{ paddingTop: 48 }}>
+              <FAQ items={faqs}/>
+            </section>
+
+            <div style={{ marginTop: 64 }}>
+              <AuthorBio
+                initials="ნჯ"
+                name="ნიკა ჯავახიშვილი"
+                role="მთავარი რედაქტორი · 6 წლის გამოცდილება კონდიციონერების ანალიზში"
+                bio="ვტესტავ კონდიციონერებს რეალურ ბინებში თბილისში. ვცდილობ, რომ ყოველი რეკომენდაცია იყოს გამოცდილების შედეგი, არა მარკეტინგული მასალის გადათარგმნა."
+              />
+            </div>
+          </div>
+        </main>
+
+        <Footer/>
+      </>
+    );
+
+    ReactDOM.createRoot(document.getElementById("root")).render(<App/>);
+  </script>
+</body>
+</html>

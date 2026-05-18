@@ -1,0 +1,131 @@
+<!doctype html>
+<html lang="ka">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>რამდენი ღირს კონდიციონერი თვეში — kondicionerebi.ge</title>
+  <link rel="stylesheet" href="site.css">
+  <link rel="stylesheet" href="site2.css">
+  <script src="https://unpkg.com/react@18.3.1/umd/react.development.js" integrity="sha384-hD6/rw4ppMLGNu3tX5cjIb+uRZ7UkRJ6BPkLpg4hAu/6onKUg4lLsHAs9EBPT82L" crossorigin="anonymous"></script>
+  <script src="https://unpkg.com/react-dom@18.3.1/umd/react-dom.development.js" integrity="sha384-u6aeetuaXnQ38mYT8rp6sbXaQe3NL9t+IBXmnYxwkUI2Hw4bsp2Wvmx4yRQF1uAm" crossorigin="anonymous"></script>
+  <script src="https://unpkg.com/@babel/standalone@7.29.0/babel.min.js" integrity="sha384-m08KidiNqLdpJqLq95G/LEi8Qvjl/xUYll3QILypMoQ65QorJ9Lvtp2RXYGBFj1y" crossorigin="anonymous"></script>
+</head>
+<body>
+  <div id="root"></div>
+
+  <script type="text/babel" src="Icons.jsx"></script>
+  <script type="text/babel" src="Nav.jsx"></script>
+  <script type="text/babel" src="ArticleHeader.jsx"></script>
+  <script type="text/babel" src="TLDR.jsx"></script>
+  <script type="text/babel" src="ComparisonTable.jsx"></script>
+  <script type="text/babel" src="FAQ.jsx"></script>
+  <script type="text/babel" src="Author.jsx"></script>
+  <script type="text/babel" src="Footer.jsx"></script>
+
+  <script type="text/babel">
+    const tldr = [
+      { label: "ფორმულა", text: 'სიმძლავრე (კვტ) × საათები × <span class="latin">0.30</span> ლარი = თვის ხარჯი' },
+      { label: "მცირე ბინა", text: '<span class="latin">9000</span> BTU, <span class="latin">6</span> სთ/დღე — <span class="latin">45-60</span> ლარი თვეში' },
+      { label: "Inverter ეკონომია", text: '<span class="latin">30%</span> ნაკლები — <span class="latin">15-20</span> ლარი თვეში' },
+      { label: "A+++ ეკონომია", text: 'სტანდარტ A+-სთან შედარებით — დამატებითი <span class="latin">10-15%</span>' },
+    ];
+
+    const tableHeaders = ["სცენარი", "ენერგო (კვტ/თვე)", "ლარი/თვე", "ლარი/სეზონი (4 თვე)"];
+    const tableRows = [
+      { href: "#", cells: [{ v: "9000 BTU, 4 სთ/დღე, A+" }, { v: "108 კვტ" }, { v: "32 ლარი" }, { v: "128 ლარი" }] },
+      { href: "#", cells: [{ v: "9000 BTU, 6 სთ/დღე, A++" }, { v: "135 კვტ" }, { v: "40 ლარი" }, { v: "162 ლარი" }] },
+      { href: "#", cells: [{ v: "12000 BTU, 6 სთ/დღე, A++" }, { v: "180 კვტ" }, { v: "54 ლარი" }, { v: "216 ლარი" }] },
+      { href: "#", cells: [{ v: "18000 BTU, 8 სთ/დღე, A+++" }, { v: "270 კვტ" }, { v: "81 ლარი" }, { v: "324 ლარი" }] },
+    ];
+
+    const faqs = [
+      { q: "ეს რეალური მონაცემებია?",
+        a: "კი — ბაზავი 2026 წლის ენერგო-ტარიფზე (0.30 ლარი/კვტ/სთ) და ჩვენი ტესტ-ბინების მონაცემებზე. რეალური ხარჯი დამოკიდებულია გამოყენების სტილზე — ცხელ დღეებში მეტი, საღამოს ცივი ჰაერი ნაკლები მუშაობით საკმარისია." },
+      { q: "ცოცხალ ფანჯრის გაღება ეკონომიურია?",
+        a: "მხოლოდ ღამის ცივ საათებში (2-6 დილით). დღის ცხელ პერიოდში ფანჯრის გაღება მხოლოდ აძვირებს კონდიციონერის მუშაობას." },
+      { q: "თერმოსტატის ტემპერატურა?",
+        a: "თითო გრადუსი ცივი ნიშნავს 6-8% მეტ ხარჯს. რეკომენდირებული ტემპერატურა — 24-26°C დღისით, 22-24°C ღამისით." },
+      { q: "ფილტრის გაწმენდა ეფექტურია?",
+        a: "კი — ბინძური ფილტრი ენერგო-ხარჯს ზრდის 5-15%-ით. გაწმენდა თვეში ერთხელ — 5 წუთიანი დავალება, რომელიც ნელ-ნელა აზოგებს ფულს." },
+    ];
+
+    const App = () => (
+      <>
+        <Nav active="გზამკვლევები"/>
+
+        <main>
+          <div className="kg-article">
+            <ArticleHeader
+              crumbs={[
+                { label: "მთავარი", href: "index.html" },
+                { label: "გზამკვლევები", href: "guides.html" },
+                { label: "თვის ხარჯი" },
+              ]}
+              title="რამდენი ღირს კონდიციონერი თვეში?"
+              dek="რეალური დენის გადასახადის გათვლა საქართველოში. ფორმულა, სცენარები, რჩევები — როგორ შეამციროთ ხარჯი ცხელ ზაფხულში."
+              authorInitials="სკ"
+              authorName="სოფო კუპრაშვილი"
+              authorRole="ჟურნალისტი · ბრენდ-ანალიზი"
+              updated="28 მარტი 2026"
+              readTime="6 წუთის წასაკითხი"
+              heroCaption="ენერგო-მთვლელი — ციფრები, რომელიც არ ცრუობს."
+            />
+
+            <TLDR items={tldr}/>
+
+            <section style={{ paddingTop: 48 }}>
+              <h2>ფორმულა</h2>
+              <p>კონდიციონერის თვის ხარჯი იანგარიშება მარტივად:</p>
+              <p style={{ background: "var(--color-accent-soft)", padding: "16px 20px", borderRadius: 8, fontSize: 17 }}>
+                <b>სიმძლავრე (კვტ) × საათები დღეში × დღეები თვეში × ფასი/კვტ</b>
+              </p>
+              <p>საქართველოში 2026 წლის ენერგო-ტარიფი — 0.30 ლარი/კვტ/სთ ჩვეულებრივი მოხმარების ფარგლებში (300 კვტ-მდე). ზემოთ — 0.34 ლარი/კვტ/სთ.</p>
+              <p>9000 BTU კონდიციონერი — დაახლოებით 0.8-1.0 კვტ ენერგო-მოხმარება. დღეში 6 საათი — 5.4 კვტ. თვეში 30 დღე — 162 კვტ × 0.30 = <b>49 ლარი</b>.</p>
+            </section>
+
+            <section style={{ paddingTop: 32 }}>
+              <h2>რეალური სცენარები</h2>
+              <ComparisonTable headers={tableHeaders} rows={tableRows}/>
+              <p style={{ marginTop: 16, fontSize: 14, color: "var(--color-text-muted)" }}>* ბაზური 2026 წლის ენერგო-ტარიფზე და ჩვენი ტესტ-ბინების მონაცემებზე. რეალური ხარჯი ცვალდება გამოყენების სტილით.</p>
+            </section>
+
+            <section style={{ paddingTop: 32 }}>
+              <h2>როგორ შევამციროთ ხარჯი</h2>
+              <ul style={{ fontSize: 17, lineHeight: 1.85, paddingLeft: 24 }}>
+                <li><b>თერმოსტატი 24°C-ზე.</b> 22°C-დან 24°C-ზე გადასვლა — 12-16% ნაკლები ხარჯი.</li>
+                <li><b>Inverter მოდელი.</b> 30% ნაკლები ენერგია ჩვეულებრივ On/Off-თან შედარებით.</li>
+                <li><b>A++ ან A+++ ენერგო-კლასი.</b> 10-20% ნაკლები კი A+ მოდელებთან.</li>
+                <li><b>ფილტრის გაწმენდა.</b> თვეში ერთხელ — 5-15% ენერგო-ეფექტურობის გაუმჯობესება.</li>
+                <li><b>ჩრდილოვანი ფასადი.</b> სამხრეთის ფანჯრებზე ჟალუზი ან ფარდა ცხელ საათებში — შემცირდება 10-20% კონდიციონერის სამუშაო.</li>
+                <li><b>ღამის ფანჯრის გაღება.</b> ცივი დილის ღამეებში ფანჯრის გაღება გრილებს ბუნებრივად — დღის ცხელ პერიოდში კონდიციონერი მცირე ხარჯით უტარდება.</li>
+              </ul>
+            </section>
+
+            <section style={{ paddingTop: 32 }}>
+              <h2>გათბობა (ზამთრის გათვალისწინებით)</h2>
+              <p>თუ კონდიციონერი გათბობისთვისაც გამოიყენება — ენერგო-ხარჯი იცვლება. Inverter მოდელი 0°C-მდე ენერგო-ეფექტურია (COP 3-4) — ანუ 1 კვტ ენერგო-მოხმარებაზე გასცემს 3-4 კვტ სითბოს. ეს უფრო ეკონომიურია, ვიდრე ელექტრო-სითბური ან გაზის ღუმელი.</p>
+            </section>
+
+            <section style={{ paddingTop: 48 }}>
+              <FAQ items={faqs}/>
+            </section>
+
+            <div style={{ marginTop: 64 }}>
+              <AuthorBio
+                initials="სკ"
+                name="სოფო კუპრაშვილი"
+                role="ჟურნალისტი · 4 წლის გამოცდილება ბრენდ-ანალიზში"
+                bio="ვიკვლევ ბრენდებსა და ბაზრის ტენდენციებს. ვწერ შედარებებსა და ბრენდ-მიმოხილვებს, რომელიც ემყარება რეალურ ფასებსა და მკითხველის გამოცდილებას."
+              />
+            </div>
+          </div>
+        </main>
+
+        <Footer/>
+      </>
+    );
+
+    ReactDOM.createRoot(document.getElementById("root")).render(<App/>);
+  </script>
+</body>
+</html>

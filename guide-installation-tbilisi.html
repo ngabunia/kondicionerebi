@@ -1,0 +1,141 @@
+<!doctype html>
+<html lang="ka">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>მონტაჟი თბილისში — kondicionerebi.ge</title>
+  <link rel="stylesheet" href="site.css">
+  <link rel="stylesheet" href="site2.css">
+  <script src="https://unpkg.com/react@18.3.1/umd/react.development.js" integrity="sha384-hD6/rw4ppMLGNu3tX5cjIb+uRZ7UkRJ6BPkLpg4hAu/6onKUg4lLsHAs9EBPT82L" crossorigin="anonymous"></script>
+  <script src="https://unpkg.com/react-dom@18.3.1/umd/react-dom.development.js" integrity="sha384-u6aeetuaXnQ38mYT8rp6sbXaQe3NL9t+IBXmnYxwkUI2Hw4bsp2Wvmx4yRQF1uAm" crossorigin="anonymous"></script>
+  <script src="https://unpkg.com/@babel/standalone@7.29.0/babel.min.js" integrity="sha384-m08KidiNqLdpJqLq95G/LEi8Qvjl/xUYll3QILypMoQ65QorJ9Lvtp2RXYGBFj1y" crossorigin="anonymous"></script>
+</head>
+<body>
+  <div id="root"></div>
+
+  <script type="text/babel" src="Icons.jsx"></script>
+  <script type="text/babel" src="Nav.jsx"></script>
+  <script type="text/babel" src="ArticleHeader.jsx"></script>
+  <script type="text/babel" src="TLDR.jsx"></script>
+  <script type="text/babel" src="FAQ.jsx"></script>
+  <script type="text/babel" src="Author.jsx"></script>
+  <script type="text/babel" src="Footer.jsx"></script>
+
+  <script type="text/babel">
+    const tldr = [
+      { label: "სტანდარტული ფასი", text: '<span class="latin">250-400</span> ლარი თბილისში — ფასი ცვალდება ტრასით' },
+      { label: "ნებართვა", text: 'ფასადზე — შენობის მართვის კომპანიის ნებართვა აუცილებელია' },
+      { label: "გრძელი ტრასა", text: '<span class="latin">+50</span> ლარი ყოველი მეტრისთვის <span class="latin">5</span>-ის შემდეგ' },
+      { label: "გარანტია", text: 'მონტიორის გარანტია — მინიმუმ <span class="latin">1</span> წელი მუშაობაზე' },
+    ];
+
+    const faqs = [
+      { q: "მონტაჟი შედის ფასში?",
+        a: "მეგატექნიკაში ხშირად — კი, ნორმალური ტრასით. სხვაგან (Extra.ge, ee.ge, ფიზიკური მაღაზიები) — ჩვეულებრივ ცალკე იხდება. დარწმუნდით შესყიდვამდე." },
+      { q: "სამხრეთ თუ ჩრდილოეთ ფასადი?",
+        a: "ჩრდილოეთი ჯობს — გარე ბლოკი არ ცხელდება მზის გავლენით, ენერგო-ეფექტურობა უკეთესია 5-10%-ით. სამხრეთის ფასადზე — დაცული ადგილი, არ უნდა იყოს პირდაპირ მზის ქვეშ." },
+      { q: "რა ფასი აქვს ცუდი მონტაჟი?",
+        a: "ცუდი მონტაჟი — ცარიელი არგუმენტი, წყლის გაჟონვა ხელახლა გათბობა-გრილებას, კომპრესორის გადატვირთვა. შესაძლოა მთლიანი მოწყობილობის ჩამოშლა — 800-1500 ლარის ხარჯი." },
+      { q: "თვითონ შემიძლია?",
+        a: "თეორიულად — კი, თუ გაქვთ ფრიონის ხელსაწყოები, ვაკუუმის ტუმბო და გამოცდილება. პრაქტიკულად — არა. გარანტია იქცევა ბათილად, წყლის გაჟონვის რისკი მაღალია. რეკომენდირებულია სერტიფიცირებული მონტიორი." },
+    ];
+
+    const App = () => (
+      <>
+        <Nav active="გზამკვლევები"/>
+
+        <main>
+          <div className="kg-article">
+            <ArticleHeader
+              crumbs={[
+                { label: "მთავარი", href: "index.html" },
+                { label: "გზამკვლევები", href: "guides.html" },
+                { label: "მონტაჟი თბილისში" },
+              ]}
+              title="მონტაჟი თბილისში: რა უნდა იცოდე"
+              dek="ფასები, ნებართვები, რა იჩხუბება შენ შენობაში. რეალური მონაცემები ვაკიდან, საბურთალოდან, დიდუბიდან."
+              authorInitials="გჭ"
+              authorName="გიორგი ჭიჭინაძე"
+              authorRole="ინჟინერი · მონტაჟი და სერვისი"
+              updated="14 მარტი 2026"
+              readTime="8 წუთის წასაკითხი"
+              heroCaption="გარე ბლოკის მონტაჟი ფასადზე — ერთ-ერთი ყველაზე რთული ეტაპი."
+            />
+
+            <TLDR items={tldr}/>
+
+            <section style={{ paddingTop: 48 }}>
+              <h2>სტანდარტული ფასი</h2>
+              <p>თბილისში 2026 წელს კონდიციონერის სტანდარტული მონტაჟი — <b>250-400 ლარი</b>. ფასი მოიცავს:</p>
+              <ul style={{ fontSize: 17, lineHeight: 1.85, paddingLeft: 24 }}>
+                <li>გარე ბლოკის მიმაგრება ფასადზე ან საფეხურზე</li>
+                <li>შიდა ბლოკის მიმაგრება კედელზე</li>
+                <li>5 მეტრამდე ფრიონის ტრასა</li>
+                <li>ვაკუუმის გაკეთება, ფრიონის ჩატენა</li>
+                <li>ცდის გაშვება, წყლის გადინების ცდა</li>
+              </ul>
+              <p>ფასი იცვლება ტრასით — 5 მეტრიდან მაღლა ყოველი მეტრი დამატებითი 50-80 ლარი (ფრიონის სითხე, საათობრივი მუშაობა).</p>
+            </section>
+
+            <section style={{ paddingTop: 32 }}>
+              <h2>ნებართვები</h2>
+              <p>თბილისში 2018 წლის შემდეგ მოქმედებს რეგულაცია — შენობის ფასადზე ცვლილების შემთხვევაში საჭიროა შენობის მართვის კომპანიის ან მესაკუთრეების უმრავლესობის ნებართვა.</p>
+              <p>პრაქტიკულად: ძველ შენობებში ხშირად არ ამოწმებენ, თუ ერთ ბლოკზე საუბარია. ახალ მშენებლობებში (Vake Park, Optima, Saburtalo Heights) — ფასადის ცვლილება მკაცრად რეგულირდება, საჭიროა შენობის მართვის წერილობითი ნებართვა.</p>
+              <p>თუ შენობას აქვს დახურული ფასადი ან ბალკონის სარკმელი — ხშირად შესაძლებელია გარე ბლოკი ბალკონზე ან საფეხურზე დადგა, ნებართვის გარეშე.</p>
+            </section>
+
+            <section style={{ paddingTop: 32 }}>
+              <h2>ხშირი პრობლემები რეგიონების მიხედვით</h2>
+              <ul style={{ fontSize: 17, lineHeight: 1.85, paddingLeft: 24 }}>
+                <li><b>ვაკე / საბურთალო (ძველი შენობები).</b> ხშირად საჭიროა ფასადის ხვრელის ფასადის რესტავრაცია — 50-100 ლარის დამატება. ფასადი ხშირად რესტავრირდება ცემენტ-პლასტიკით.</li>
+                <li><b>დიდუბე / გლდანი (საბჭოური სერია).</b> ცემენტ-ლუქის ფასადი ჭკუარული. ხშირად საჭიროა გრძელი ტრასა და გადადგმის ფასი 350-500 ლარი.</li>
+                <li><b>ისანი / გორგასლის (ახალი მშენებლობა).</b> საუკეთესო პირობები — ფასადს აქვს გარე ბლოკის სლოტი. მონტაჟი ხშირად 1 დღეში, 250 ლარისთვის.</li>
+              </ul>
+            </section>
+
+            <section style={{ paddingTop: 32 }}>
+              <h2>რა ვითხოვო მონტიორისგან</h2>
+              <ul style={{ fontSize: 17, lineHeight: 1.85, paddingLeft: 24 }}>
+                <li>სერტიფიკატი HVAC მონტაჟზე (Daikin, Mitsubishi, Hisense — ბრენდის სერტიფიკატი)</li>
+                <li>ვაკუუმის ცდა (მინიმუმ 30 წუთი) — ეს უზრუნველყოფს, რომ ფრიონის სისტემაში ჰაერი არ შემოვა</li>
+                <li>წერილობითი გარანტია მუშაობაზე — მინიმუმ 1 წელი</li>
+                <li>ფასადის სამუშაოს ფოტო-ანგარიში</li>
+                <li>გადახდის ქვითარი</li>
+              </ul>
+            </section>
+
+            <section style={{ paddingTop: 32 }}>
+              <h2>როდის ჩაიხედო ცუდი მონტაჟი</h2>
+              <p>ცუდი მონტაჟის სიგნალები:</p>
+              <ul style={{ fontSize: 17, lineHeight: 1.85, paddingLeft: 24 }}>
+                <li>ფრიონის გაჟონვა (ცივი ჰაერი არ მოდის სრულად, ცივი მილი ნახჯრებზე)</li>
+                <li>გარე ბლოკი ნელ-ნელა გადადის ფასადიდან</li>
+                <li>წყლის გადინება შენობის ფასადზე ნაცვლად დრენაჟის სისტემაში</li>
+                <li>ცხელი ჰაერი გადის შიდა ბლოკის უკან (ცუდი ჰერმეტიზაცია)</li>
+              </ul>
+              <p>თუ ეს სიგნალები 1-2 თვეში ფიქსირდება — დაუკავშირდით მონტიორს გარანტიის ფარგლებში.</p>
+            </section>
+
+            <section style={{ paddingTop: 48 }}>
+              <FAQ items={faqs}/>
+            </section>
+
+            <div style={{ marginTop: 64 }}>
+              <AuthorBio
+                initials="გჭ"
+                name="გიორგი ჭიჭინაძე"
+                role="ინჟინერი · 12 წლის გამოცდილება HVAC მონტაჟში"
+                bio="12 წლის გამოცდილება HVAC მონტაჟში თბილისში. ვამოწმებ ტექნიკურ მახასიათებლებსა და ვიკვლევ პრობლემებს რეალურ ბინებში — არა მწარმოებლის სპეციფიკაციით."
+              />
+            </div>
+          </div>
+        </main>
+
+        <Footer/>
+      </>
+    );
+
+    ReactDOM.createRoot(document.getElementById("root")).render(<App/>);
+  </script>
+</body>
+</html>

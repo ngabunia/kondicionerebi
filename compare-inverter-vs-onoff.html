@@ -1,0 +1,129 @@
+<!doctype html>
+<html lang="ka">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>Inverter vs On/Off — kondicionerebi.ge</title>
+  <link rel="stylesheet" href="site.css">
+  <link rel="stylesheet" href="site2.css">
+  <script src="https://unpkg.com/react@18.3.1/umd/react.development.js" integrity="sha384-hD6/rw4ppMLGNu3tX5cjIb+uRZ7UkRJ6BPkLpg4hAu/6onKUg4lLsHAs9EBPT82L" crossorigin="anonymous"></script>
+  <script src="https://unpkg.com/react-dom@18.3.1/umd/react-dom.development.js" integrity="sha384-u6aeetuaXnQ38mYT8rp6sbXaQe3NL9t+IBXmnYxwkUI2Hw4bsp2Wvmx4yRQF1uAm" crossorigin="anonymous"></script>
+  <script src="https://unpkg.com/@babel/standalone@7.29.0/babel.min.js" integrity="sha384-m08KidiNqLdpJqLq95G/LEi8Qvjl/xUYll3QILypMoQ65QorJ9Lvtp2RXYGBFj1y" crossorigin="anonymous"></script>
+</head>
+<body>
+  <div id="root"></div>
+
+  <script type="text/babel" src="Icons.jsx"></script>
+  <script type="text/babel" src="Nav.jsx"></script>
+  <script type="text/babel" src="ArticleHeader.jsx"></script>
+  <script type="text/babel" src="TLDR.jsx"></script>
+  <script type="text/babel" src="ComparisonTable.jsx"></script>
+  <script type="text/babel" src="FAQ.jsx"></script>
+  <script type="text/babel" src="Author.jsx"></script>
+  <script type="text/babel" src="Footer.jsx"></script>
+
+  <script type="text/babel">
+    const tldr = [
+      { label: "ენერგო", text: 'Inverter — <span class="latin">30%</span> ნაკლები ენერგია, <span class="latin">5-7</span> წელში ფასი ფარდდება' },
+      { label: "ხმაური", text: 'Inverter — ნაკლები, On/Off — ციკლური „გაჩერება-ჩართვა“' },
+      { label: "ხანგრძლივობა", text: 'Inverter — <span class="latin">12-15</span> წელი, On/Off — <span class="latin">7-10</span>' },
+      { label: "ფასი", text: 'Inverter — <span class="latin">+200-300</span> ლარი საწყისად' },
+    ];
+
+    const tableHeaders = ["კრიტერიუმი", "Inverter", "On/Off"];
+    const tableRows = [
+      { href: "#", cells: [{ v: "საწყისი ფასი" }, { v: "750-1200 ლ" }, { v: "450-650 ლ", best: true }] },
+      { href: "#", cells: [{ v: "ენერგო-მოხმარება" }, { v: "30% ნაკლები", best: true }, { v: "სტანდარტი" }] },
+      { href: "#", cells: [{ v: "ხმაური" }, { v: "19-24 dB", best: true }, { v: "28-35 dB" }] },
+      { href: "#", cells: [{ v: "ტემპერატურის სტაბილურობა" }, { v: "±0.5°C", best: true }, { v: "±2-3°C" }] },
+      { href: "#", cells: [{ v: "ხანგრძლივობა" }, { v: "12-15 წელი", best: true }, { v: "7-10 წელი" }] },
+      { href: "#", cells: [{ v: "სერვისის ფასი" }, { v: "ძვირი" }, { v: "იაფი", best: true }] },
+    ];
+
+    const faqs = [
+      { q: "რა არის Inverter ტექნოლოგია?",
+        a: "Inverter-ი არის კომპრესორის ცვალებად-სიჩქარის სისტემა. ჩვეულებრივი (On/Off) კონდიციონერი მუშაობს ერთ სიჩქარეზე — ან მაქსიმუმი, ან გათიშული. Inverter ცვლის სიჩქარეს უწყვეტად — ხშირად 30% სიმძლავრით, თუ ოთახი ცივი დღეს, 100% თუ ცხელი." },
+      { q: "On/Off ჯერ კიდევ აქვს გასაყიდი?",
+        a: "მცირდება. დღეს ბაზრის 80%+ Inverter-ია. On/Off ჯერ კიდევ პოპულარულია იაფ მოდელებში (Gree-ს და Hisense-ის ბაზისური ხაზი) — სადაც ფასი მთავარი." },
+      { q: "Inverter უფრო ხმაურიანია გაშვებისას?",
+        a: "პირიქით — Inverter ხშირად მუშაობს დაბალი სიმძლავრით, ანუ ხმაური ნაკლები. On/Off-ში ხშირი „ჩართვა-გაჩერების“ ციკლი მკვეთრად შეიგრძნობა." },
+      { q: "სითბური ტუმბო (გაცხელება) — სხვაობა?",
+        a: "Inverter ბევრად უკეთესია გაცხელებისთვის — განსაკუთრებით 0°C-მდე ტემპერატურაზე. On/Off ცივ ამინდში თითქმის ვერ აცხელებს." },
+    ];
+
+    const App = () => (
+      <>
+        <Nav active="გზამკვლევები"/>
+
+        <main>
+          <div className="kg-article">
+            <ArticleHeader
+              crumbs={[
+                { label: "მთავარი", href: "index.html" },
+                { label: "გზამკვლევები", href: "guides.html" },
+                { label: "Inverter vs On/Off" },
+              ]}
+              title={<><span className="latin">Inverter</span> vs <span className="latin">On/Off</span> — სამუდამოდ</>}
+              dek="ენერგო, ხმაური, ხანგრძლივობა — სამივეში სხვაობა Inverter-ის სასარგებლოდ. გავიგოთ, რატომ ხდება ის ბაზრის სტანდარტი."
+              authorInitials="სკ"
+              authorName="სოფო კუპრაშვილი"
+              authorRole="ჟურნალისტი · ბრენდ-ანალიზი"
+              updated="4 აპრილი 2026"
+              readTime="5 წუთის წასაკითხი"
+              heroCaption="Inverter კომპრესორი — სიჩქარის უწყვეტი ცვალებადობა."
+            />
+
+            <TLDR items={tldr}/>
+
+            <section style={{ paddingTop: 48 }}>
+              <h2>როგორ მუშაობს თითოეული</h2>
+              <p><b>On/Off (ჩვეულებრივი).</b> კონდიციონერი მუშაობს მაქსიმუმ სიმძლავრეზე, ცივდება ოთახს მითითებულ ტემპერატურამდე, შემდეგ გამოირთვება. როცა ოთახი ისევ ცხელდება — ჩაირთვება მაქსიმუმზე. „ჩართვა-გაჩერების“ ციკლი იმეორდება 10-15 წუთში.</p>
+              <p><b>Inverter.</b> კომპრესორი მუშაობს ცვალებად სიჩქარეზე — საწყისად მაქსიმუმი, შემდეგ 30-50% სიმძლავრე ოთახის შენარჩუნებისთვის. არ არის „ჩართვა-გაჩერების“ ციკლი — მუშაობს უწყვეტად, მაგრამ მცირე სიმძლავრით.</p>
+            </section>
+
+            <section style={{ paddingTop: 32 }}>
+              <h2>შედარების ცხრილი</h2>
+              <ComparisonTable headers={tableHeaders} rows={tableRows}/>
+            </section>
+
+            <section style={{ paddingTop: 32 }}>
+              <h2>როდის ჯობს On/Off</h2>
+              <p>გვაქვს დიდი მცდელობა შემოწმდეს, რომ Inverter ყოველთვის ჯობს. ეს არ არის სიმართლე. On/Off უკეთესია:</p>
+              <ul style={{ fontSize: 17, lineHeight: 1.85, paddingLeft: 24 }}>
+                <li><b>გასაქირავებელი ბინა.</b> საწყისი ფასი მნიშვნელოვანი, კონდიციონერი იშვიათად მუშაობს.</li>
+                <li><b>მეორე ბინა.</b> სოფლის სახლი ან აგარაკი, რომელშიც კონდიციონერი წელიწადში 30 დღე მუშაობს.</li>
+                <li><b>მცირე ბიუჯეტი.</b> 450-650 ლარის On/Off დღეს 8-10 წელი მუშაობს — საკმარისი ფასისთვის.</li>
+                <li><b>გაცხელება არ აქვს მნიშვნელობა.</b> On/Off ცივ ამინდში ცუდად ცხელდება — თუ მხოლოდ ცივი ჰაერი გჭირდებათ, ნაკლი არ აქვს.</li>
+              </ul>
+            </section>
+
+            <section style={{ paddingTop: 32 }}>
+              <h2>ფინანსური გათვლა</h2>
+              <p>Inverter ფასი +200-300 ლარი. ენერგო ეკონომია 30% — საშუალოდ წელიწადში 150 ლარი (4 თვის მუშაობით). ფასი ფარდდება 2-3 წელში.</p>
+              <p>თუ კონდიციონერი 7+ წელი იცოცხლებს — Inverter რენტაბელურია. თუ ნაკლები — On/Off უფრო ეკონომიური.</p>
+              <p>დღევანდელი ბაზრის რჩევა: Inverter უმეტეს შემთხვევაში. გამონაკლისები — გაიმეორო ზემოთ.</p>
+            </section>
+
+            <section style={{ paddingTop: 48 }}>
+              <FAQ items={faqs}/>
+            </section>
+
+            <div style={{ marginTop: 64 }}>
+              <AuthorBio
+                initials="სკ"
+                name="სოფო კუპრაშვილი"
+                role="ჟურნალისტი · 4 წლის გამოცდილება ბრენდ-ანალიზში"
+                bio="ვიკვლევ ბრენდებსა და ბაზრის ტენდენციებს. ვწერ შედარებებსა და ბრენდ-მიმოხილვებს, რომელიც ემყარება რეალურ ფასებსა და მკითხველის გამოცდილებას."
+              />
+            </div>
+          </div>
+        </main>
+
+        <Footer/>
+      </>
+    );
+
+    ReactDOM.createRoot(document.getElementById("root")).render(<App/>);
+  </script>
+</body>
+</html>
