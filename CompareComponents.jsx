@@ -2,21 +2,30 @@
 // Comparison page components
 // ============================================================
 
-const CompareHero = ({ a, b }) => (
-  <section className="kg-compare-hero">
-    <div className="kg-compare-product">
-      <div className="kg-compare-img"><span className="kg-placeholder-label">{a.name}</span></div>
-      <h3>{a.name}</h3>
-      <div className="kg-price-now latin">{a.price} ლარი</div>
-    </div>
-    <div className="kg-vs-icon">vs</div>
-    <div className="kg-compare-product">
-      <div className="kg-compare-img"><span className="kg-placeholder-label">{b.name}</span></div>
-      <h3>{b.name}</h3>
-      <div className="kg-price-now latin">{b.price} ლარი</div>
-    </div>
-  </section>
-);
+const CompareHero = ({ a, b }) => {
+  const imgStyle = (img) => img
+    ? { backgroundImage: `url(${img})`, backgroundSize: "cover", backgroundPosition: "center" }
+    : null;
+  return (
+    <section className="kg-compare-hero">
+      <div className="kg-compare-product">
+        <div className="kg-compare-img" style={imgStyle(a.img)}>
+          {!a.img && <span className="kg-placeholder-label">{a.name}</span>}
+        </div>
+        <h3>{a.name}</h3>
+        <div className="kg-price-now latin">{a.price} ლარი</div>
+      </div>
+      <div className="kg-vs-icon">vs</div>
+      <div className="kg-compare-product">
+        <div className="kg-compare-img" style={imgStyle(b.img)}>
+          {!b.img && <span className="kg-placeholder-label">{b.name}</span>}
+        </div>
+        <h3>{b.name}</h3>
+        <div className="kg-price-now latin">{b.price} ლარი</div>
+      </div>
+    </section>
+  );
+};
 
 const VerdictBlock = ({ lines }) => (
   <section className="kg-verdict-block">

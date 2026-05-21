@@ -2,9 +2,13 @@
 // Brand page components
 // ============================================================
 
-const BrandHero = ({ name, tagline, verdict, logo }) => (
+const BrandHero = ({ name, tagline, verdict, logo, logoSrc }) => (
   <section className="kg-brand-hero">
-    <div className="kg-brand-logo-box">{logo || name}</div>
+    <div className="kg-brand-logo-box">
+      {logoSrc
+        ? <img src={logoSrc} alt={name} style={{ maxWidth: "70%", maxHeight: "50%" }}/>
+        : (logo || name)}
+    </div>
     <div>
       <h1>{name}</h1>
       <p className="kg-brand-hero-tagline">{tagline}</p>
