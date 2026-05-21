@@ -169,17 +169,17 @@ const PeopleSlider = ({ value, onChange }) => (
 const RECS_BY_BTU = {
   5000:  [
     { name: "Hisense AS-05HR4", reason: "მცირე ოთახისთვის — საუკეთესო ფასი.",       price: "399",   href: "#" },
-    { name: "Gree GWH05",        reason: "ბიუჯეტური ალტერნატივა, საიმედო.",         price: "349",   href: "#" },
+    { name: "AUX ASW-H05A4",        reason: "ბიუჯეტური ალტერნატივა, საიმედო.",         price: "349",   href: "#" },
     { name: "Samsung WindFree 5K", reason: "უხმაუროდ მუშაობს, A++ ენერგო-კლასი.",     price: "749",   href: "#" },
   ],
   7000:  [
     { name: "Hisense AS-07UR4", reason: "კატეგორიის საუკეთესო ფასი/ხარისხი.",       price: "479",   href: "#" },
-    { name: "Gree GWH07",        reason: "ბიუჯეტური — გასაქირავებელი ბინისთვის.",   price: "419",   href: "#" },
+    { name: "AUX ASW-H07A4",        reason: "ბიუჯეტური — გასაქირავებელი ბინისთვის.",   price: "419",   href: "#" },
     { name: "LG S07EQ",          reason: "WiFi და ქართული აპლიკაცია.",                price: "829",   href: "#" },
   ],
   9000:  [
     { name: "Hisense AS-09HR4", reason: "საუკეთესო საერთო — სიჩუმე და გარანტია.",     price: "699",   href: "guide.html" },
-    { name: "Gree GWH09",        reason: "150 ლარით იაფი — ბიუჯეტური არჩევანი.",      price: "549",   href: "guide.html" },
+    { name: "AUX ASW-H09A4",        reason: "150 ლარით იაფი — ბიუჯეტური არჩევანი.",      price: "549",   href: "guide.html" },
     { name: "Samsung WindFree 9K", reason: "ენერგო-ეფექტური, თითქმის უხმაუროდ.",       price: "1 199", href: "guide.html" },
   ],
   12000: [
@@ -189,7 +189,7 @@ const RECS_BY_BTU = {
   ],
   18000: [
     { name: "Hisense AS-18FR4", reason: "დიდი ფართობებისთვის, 35–50 კვ.მ-მდე.",      price: "1 049", href: "#" },
-    { name: "Gree GWH18",        reason: "ეკონომიური ვარიანტი მთავარ მისაღებში.",     price: "899",   href: "#" },
+    { name: "AUX ASW-H18A4",        reason: "ეკონომიური ვარიანტი მთავარ მისაღებში.",     price: "899",   href: "#" },
     { name: "LG S18EQ",          reason: "ენერგო-კლასი A+++, ცხელი თვეებისთვის.",      price: "1 899", href: "#" },
   ],
   24000: [
