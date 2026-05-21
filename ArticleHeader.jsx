@@ -12,7 +12,7 @@ const Breadcrumb = ({ items }) => (
 
 const ArticleHeader = ({
   crumbs, title, dek, authorInitials, authorName, authorRole,
-  updated, readTime, heroCaption,
+  updated, readTime, heroCaption, heroImg,
 }) => (
   <header className="kg-article-header">
     <Breadcrumb items={crumbs}/>
@@ -30,8 +30,8 @@ const ArticleHeader = ({
       <span className="small muted"><IconClock size={14} color="#6B7280"/> {readTime}</span>
     </div>
     <figure className="kg-hero">
-      <div className="kg-hero-img">
-        <span className="kg-placeholder-label">tbilisi rooftop · AC condensers · summer</span>
+      <div className="kg-hero-img" style={heroImg ? { backgroundImage: `url(${heroImg})`, backgroundSize: "cover", backgroundPosition: "center" } : null}>
+        {!heroImg && <span className="kg-placeholder-label">tbilisi rooftop · AC condensers · summer</span>}
       </div>
       <figcaption>{heroCaption}</figcaption>
     </figure>

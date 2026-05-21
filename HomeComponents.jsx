@@ -104,7 +104,11 @@ const GuideGrid = ({ items }) => (
 const BrandsGrid = ({ brands }) => (
   <div className="kg-brands-grid">
     {brands.map((b, i) => (
-      <a key={i} href={b.href} className="kg-brand-tile">{b.name}</a>
+      <a key={i} href={b.href} className="kg-brand-tile" aria-label={b.name}>
+        {b.logo
+          ? <img src={b.logo} alt={b.name} style={{ maxWidth: "70%", maxHeight: "60%" }}/>
+          : b.name}
+      </a>
     ))}
   </div>
 );
