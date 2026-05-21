@@ -2,11 +2,16 @@
 // Homepage components
 // ============================================================
 
+// Helper — render image area with real photo if provided, else striped placeholder
+const bgStyle = (img) => img
+  ? { backgroundImage: `url(${img})`, backgroundSize: "cover", backgroundPosition: "center" }
+  : null;
+
 const HeroSection = ({ feature, side }) => (
   <section className="kg-hero-section">
     <a href={feature.href} className="kg-hero-feature">
-      <div className="kg-hero-feature-img">
-        <span className="kg-placeholder-label">{feature.imgLabel}</span>
+      <div className="kg-hero-feature-img" style={bgStyle(feature.img)}>
+        {!feature.img && <span className="kg-placeholder-label">{feature.imgLabel}</span>}
       </div>
       <div className="kg-hero-feature-body">
         <span className="kg-pill-sm">{feature.tag}</span>
@@ -18,7 +23,7 @@ const HeroSection = ({ feature, side }) => (
     <div className="kg-hero-side">
       {side.map((s, i) => (
         <a key={i} href={s.href} className="kg-hero-side-card">
-          <div className="kg-hero-side-img"></div>
+          <div className="kg-hero-side-img" style={bgStyle(s.img)}></div>
           <div className="kg-hero-side-body">
             <span className="kg-pill-sm" style={{ alignSelf: "flex-start" }}>{s.tag}</span>
             <h4>{s.title}</h4>
@@ -42,8 +47,8 @@ const TopPicksRow = ({ picks }) => (
     {picks.map((p, i) => (
       <a key={i} href={p.href} className="kg-pick-card">
         <div className="kg-pick-card-rank">{p.rank}</div>
-        <div className="kg-pick-card-img">
-          <span className="kg-placeholder-label">product · white bg</span>
+        <div className="kg-pick-card-img" style={bgStyle(p.img)}>
+          {!p.img && <span className="kg-placeholder-label">product · white bg</span>}
         </div>
         <div className="kg-pick-card-body">
           <h3 className="latin">{p.name}</h3>
@@ -77,8 +82,8 @@ const GuideGrid = ({ items }) => (
   <div className="kg-guide-grid">
     {items.map((it, i) => (
       <a key={i} href={it.href} className="kg-related-card">
-        <div className="kg-related-img">
-          <span className="kg-placeholder-label">{it.imgLabel}</span>
+        <div className="kg-related-img" style={bgStyle(it.img)}>
+          {!it.img && <span className="kg-placeholder-label">{it.imgLabel}</span>}
         </div>
         <div className="kg-related-body">
           <span className="kg-pill-sm">{it.tag}</span>
@@ -107,8 +112,7 @@ const BrandsGrid = ({ brands }) => (
 const TeamBlock = () => (
   <section className="kg-section">
     <div className="kg-team-block">
-      <div className="kg-team-img">
-        <span className="kg-placeholder-label">team portrait · 4 people · daylight</span>
+      <div className="kg-team-img" style={{ backgroundImage: "url(images/photos/team.jpg)", backgroundSize: "cover", backgroundPosition: "center" }}>
       </div>
       <div>
         <h2>ვინ ვართ ჩვენ</h2>
