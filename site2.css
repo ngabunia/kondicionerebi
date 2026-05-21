@@ -120,6 +120,77 @@
 .kg-pick-card-price { font-family: var(--font-latin); font-weight: 700; font-size: 18px; color: var(--color-primary); }
 .kg-pick-card-link { color: var(--color-accent); font-weight: 600; font-size: 14px; }
 
+/* ===== Megatechnica CTA — reusable block ===== */
+.kg-mega-cta {
+  background: linear-gradient(135deg, var(--color-primary) 0%, #102E4D 100%);
+  color: #fff;
+  border-radius: var(--radius-xl);
+  padding: var(--space-7) var(--space-7);
+  margin: var(--space-7) 0;
+  max-width: var(--w-page);
+  margin-left: auto;
+  margin-right: auto;
+}
+.kg-mega-cta-header { margin-bottom: var(--space-6); }
+.kg-mega-cta-label {
+  display: inline-block;
+  font-size: 11px; font-weight: 700;
+  text-transform: uppercase; letter-spacing: 0.10em;
+  color: var(--color-accent);
+  padding: 4px 10px;
+  background: rgba(6, 182, 212, 0.15);
+  border-radius: var(--radius-full);
+  margin-bottom: var(--space-4);
+}
+.kg-mega-cta-title {
+  color: #fff;
+  font-size: 30px; line-height: 1.25;
+  margin: 0 0 var(--space-3);
+}
+.kg-mega-cta-dek {
+  color: rgba(255, 255, 255, 0.75);
+  font-size: 16px; line-height: 1.6;
+  margin: 0;
+  max-width: 640px;
+}
+.kg-mega-cta-grid {
+  display: grid;
+  grid-template-columns: repeat(2, 1fr);
+  gap: var(--space-5);
+  margin-bottom: var(--space-6);
+}
+.kg-mega-cta-point {
+  display: flex; gap: var(--space-3); align-items: flex-start;
+}
+.kg-mega-cta-point svg { flex: none; margin-top: 2px; }
+.kg-mega-cta-point h4 {
+  color: #fff;
+  font-size: 16px; font-weight: 600;
+  margin: 0 0 4px;
+}
+.kg-mega-cta-point p {
+  color: rgba(255, 255, 255, 0.72);
+  font-size: 14px; line-height: 1.55;
+  margin: 0;
+}
+.kg-mega-cta-action { padding-top: var(--space-2); }
+.kg-mega-cta-action .kg-btn-primary {
+  background: var(--color-accent);
+  font-size: 16px;
+  padding: 14px 24px;
+}
+.kg-mega-cta-action .kg-btn-primary:hover { background: var(--color-accent-hover); }
+
+.kg-mega-cta--compact { padding: var(--space-6); }
+.kg-mega-cta--compact .kg-mega-cta-title { font-size: 22px; }
+.kg-mega-cta--compact .kg-mega-cta-grid { grid-template-columns: 1fr 1fr; gap: var(--space-4); margin-bottom: var(--space-5); }
+
+@media (max-width: 720px) {
+  .kg-mega-cta { padding: var(--space-6) var(--space-5); }
+  .kg-mega-cta-title { font-size: 24px; }
+  .kg-mega-cta-grid { grid-template-columns: 1fr; gap: var(--space-4); }
+}
+
 /* ===== BTU calculator CTA strip ===== */
 .kg-btu-strip {
   background: var(--color-accent-soft);

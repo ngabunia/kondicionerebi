@@ -137,7 +137,66 @@ const HomeFAQ = ({ items }) => (
   </section>
 );
 
+// Reusable "Where to buy at Megatechnica" CTA — placed on brand pages,
+// homepage, best-of, compare, and flagship guide
+const MegatechnicaCTA = ({ brand, headline, compact }) => {
+  const title = headline
+    || (brand
+        ? `სად ვიყიდო ${brand}? — მეგატექნიკაში`
+        : "სად ვიყიდო კონდიციონერი? — მეგატექნიკაში");
+  const subtitle = brand
+    ? `მეგატექნიკა — ${brand}-ის ოფიციალური დისტრიბუტორი საქართველოში.`
+    : "მეგატექნიკა — Hisense, AUX, LG და Samsung-ის ოფიციალური დისტრიბუტორი საქართველოში.";
+
+  return (
+    <section className={"kg-mega-cta" + (compact ? " kg-mega-cta--compact" : "")}>
+      <div className="kg-mega-cta-header">
+        <span className="kg-mega-cta-label">ოფიციალური დისტრიბუტორი</span>
+        <h2 className="kg-mega-cta-title">{title}</h2>
+        <p className="kg-mega-cta-dek">{subtitle}</p>
+      </div>
+
+      <div className="kg-mega-cta-grid">
+        <div className="kg-mega-cta-point">
+          <IconBolt size={20} color="#06B6D4"/>
+          <div>
+            <h4>ყველაზე იაფი ფასი</h4>
+            <p>ოფიციალური დისტრიბუტორის პირდაპირი მიწოდება — შუამავლების გარეშე.</p>
+          </div>
+        </div>
+        <div className="kg-mega-cta-point">
+          <IconShield size={20} color="#06B6D4"/>
+          <div>
+            <h4>საუკეთესო გარანტია</h4>
+            <p>გრძელვადიანი ქარხნული გარანტია + სრული მხარდაჭერა მთელი მუშაობის პერიოდში.</p>
+          </div>
+        </div>
+        <div className="kg-mega-cta-point">
+          <IconWrench size={20} color="#06B6D4"/>
+          <div>
+            <h4>პროფესიული სერვისი</h4>
+            <p>სერტიფიცირებული ტექნიკოსები, რეგულარული ტექნიკური მხარდაჭერა.</p>
+          </div>
+        </div>
+        <div className="kg-mega-cta-point">
+          <IconCheck size={20} color="#06B6D4"/>
+          <div>
+            <h4>მაღაზიები მთელ საქართველოში + ონლაინ</h4>
+            <p>თბილისი, ბათუმი, ქუთაისი და სხვა ქალაქები — ფიზიკური მაღაზიები. ან შეიძინეთ ონლაინ.</p>
+          </div>
+        </div>
+      </div>
+
+      <div className="kg-mega-cta-action">
+        <a href="https://megatechnica.ge" target="_blank" rel="noopener" className="kg-btn-primary">
+          ნახე megatechnica.ge-ზე <IconArrow size={16}/>
+        </a>
+      </div>
+    </section>
+  );
+};
+
 Object.assign(window, {
   HeroSection, SectionHead, TopPicksRow, BtuStrip,
-  GuideGrid, BrandsGrid, TeamBlock, HomeFAQ,
+  GuideGrid, BrandsGrid, TeamBlock, HomeFAQ, MegatechnicaCTA,
 });

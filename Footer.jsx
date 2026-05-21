@@ -11,6 +11,7 @@ const Footer = () => (
         </div>
         <p className="kg-footer-tagline">დამოუკიდებელი მიმოხილვები კონდიციონერებზე — ქართულად.</p>
         <p className="small">kondicionerebi.ge არის დამოუკიდებელი საინფორმაციო რესურსი კონდიციონერების შესახებ.</p>
+        <p className="small" style={{ marginTop: 12 }}>ჩვენი რეკომენდირებული გამყიდველი — <a href="https://megatechnica.ge" target="_blank" rel="noopener" style={{ color: "#fff", fontWeight: 600 }}>მეგატექნიკა</a>, Hisense, AUX, LG და Samsung-ის ოფიციალური დისტრიბუტორი საქართველოში.</p>
       </div>
       <div>
         <h5>ნავიგაცია</h5>

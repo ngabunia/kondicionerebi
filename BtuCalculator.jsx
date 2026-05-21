@@ -418,8 +418,8 @@ const BtuCalculator = () => {
           }))}
         />
         <div className="kg-calc-cta-strip">
-          <p>ნახე ყველა <b>{formatBTU(btuClass)} BTU</b> კონდიციონერი — 30+ მოდელი მეგატექნიკაში, ფასების შედარება Extra.ge-სა და ee.ge-სთან.</p>
-          <a href="#" className="kg-btn-primary">გადადი მაღაზიაში <IconArrow size={14}/></a>
+          <p>ნახე ყველა <b>{formatBTU(btuClass)} BTU</b> კონდიციონერი მეგატექნიკაში — Hisense, AUX, LG, Samsung-ის ოფიციალური დისტრიბუტორი. ყველაზე იაფი ფასი, საუკეთესო გარანტია, მაღაზიები მთელ საქართველოში.</p>
+          <a href="https://megatechnica.ge" target="_blank" rel="noopener" className="kg-btn-primary">გადადი megatechnica.ge-ზე <IconArrow size={14}/></a>
         </div>
       </section>
     </>
