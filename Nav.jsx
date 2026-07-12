@@ -22,7 +22,7 @@ const Nav = ({ active }) => {
       </ul>
       <div className="kg-nav-right">
         <a href="btu.html" className="kg-btn-ghost"><IconCalc size={16}/> BTU კალკულატორი</a>
-        <button className="kg-icon-btn" aria-label="Search"><IconSearch size={20} color="#6B7280"/></button>
+        <button className="kg-icon-btn" aria-label="ძებნა"><IconSearch size={20} color="#6B7280"/></button>
       </div>
     </nav>
   );

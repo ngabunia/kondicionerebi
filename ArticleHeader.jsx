@@ -25,7 +25,7 @@ const ArticleHeader = ({
         <span className="muted"> · {authorRole}</span>
       </div>
       <span className="kg-byline-dot">·</span>
-      <span className="small muted">ბოლო განახლება: {updated}</span>
+      <span className="small muted">განახლდა: {updated}</span>
       <span className="kg-byline-dot">·</span>
       <span className="small muted"><IconClock size={14} color="#6B7280"/> {readTime}</span>
     </div>

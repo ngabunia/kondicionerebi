@@ -18,7 +18,7 @@ const ComparisonTable = ({ headers, rows }) => (
                 </span>
               </td>
             ))}
-            <td className="kg-table-action"><a href={row.href}>ნახე <IconChevR size={14}/></a></td>
+            <td className="kg-table-action"><a href={row.href}>ვრცლად <IconChevR size={14}/></a></td>
           </tr>
         ))}
       </tbody>

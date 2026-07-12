@@ -6,7 +6,7 @@ const AuthorBio = ({ initials, name, role, bio }) => (
       <h4>{name}</h4>
       <div className="small muted">{role}</div>
       <p>{bio}</p>
-      <a href="#" className="kg-link">ჩემი სხვა სტატიები <IconChevR size={12}/></a>
+      <a href="about.html" className="kg-link">ჩემი სხვა სტატიები <IconChevR size={12}/></a>
     </div>
   </section>
 );
@@ -26,7 +26,7 @@ const RelatedCard = ({ tag, title, dek, label }) => (
 
 const RelatedGrid = ({ items }) => (
   <section className="kg-related-grid">
-    <h2>დაკავშირებული სტატიები</h2>
+    <h2>ასევე წაიკითხეთ</h2>
     <div className="kg-related-row">
       {items.map((it, i) => <RelatedCard key={i} {...it}/>)}
     </div>

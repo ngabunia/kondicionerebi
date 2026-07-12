@@ -15,11 +15,11 @@ const RankBadge = ({ num, label, title }) => (
 const ProsCons = ({ pros, cons }) => (
   <div className="kg-pros-cons">
     <div className="kg-pc-col kg-pc-pros">
-      <h4>დადებითი</h4>
+      <h4>პლუსები</h4>
       <ul>{pros.map((p, i) => <li key={i}>{p}</li>)}</ul>
     </div>
     <div className="kg-pc-col kg-pc-cons">
-      <h4>უარყოფითი</h4>
+      <h4>მინუსები</h4>
       <ul>{cons.map((c, i) => <li key={i}>{c}</li>)}</ul>
     </div>
   </div>
@@ -39,13 +39,13 @@ const WhoBlock = ({ kind = "buy", title, children }) => (
 
 const QuickSummary = ({ items }) => (
   <section className="kg-quick-summary">
-    <h3>ჩვენი არჩევანი — სწრაფი მიმოხილვა</h3>
+    <h3>ჩვენი რჩეულები — ერთი შეხედვით</h3>
     <ol>
       {items.map((it, i) => (
         <li key={i}>
           <span className="qs-label">{it.label}</span>
           <span className="qs-name">{it.name}</span>
-          <a href={`#${it.anchor}`}>კარგი დეტალები →</a>
+          <a href={`#${it.anchor}`}>ვრცლად →</a>
         </li>
       ))}
     </ol>

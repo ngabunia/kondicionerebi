@@ -17,7 +17,7 @@ const HeroSection = ({ feature, side }) => (
         <span className="kg-pill-sm">{feature.tag}</span>
         <h2 style={{ marginTop: 12 }}>{feature.title}</h2>
         <p>{feature.dek}</p>
-        <span className="kg-hero-cta">წაიკითხე <IconArrow size={14}/></span>
+        <span className="kg-hero-cta">წაიკითხეთ <IconArrow size={14}/></span>
       </div>
     </a>
     <div className="kg-hero-side">
@@ -54,8 +54,8 @@ const TopPicksRow = ({ picks }) => (
           <h3 className="latin">{p.name}</h3>
           <p className="kg-pick-card-reason">{p.reason}</p>
           <div className="kg-pick-card-row">
-            <span className="kg-pick-card-price">{p.price} ლარი</span>
-            <span className="kg-pick-card-link">ნახე მიმოხილვა →</span>
+            <span className="kg-pick-card-price">{p.price} ₾</span>
+            <span className="kg-pick-card-link">სრული მიმოხილვა →</span>
           </div>
         </div>
       </a>
@@ -70,10 +70,10 @@ const BtuStrip = () => (
         <IconCalc size={32} color="#06B6D4"/>
       </div>
       <div>
-        <h2>რა BTU მჭირდება?</h2>
-        <p>შეიყვანე ოთახის ფართობი და ჭერის სიმაღლე — წამში მიიღებ ზუსტ რეკომენდაციას.</p>
+        <h2>რა სიმძლავრის კონდიციონერი მჭირდება?</h2>
+        <p>შეიყვანეთ ოთახის ფართობი და ჭერის სიმაღლე — რამდენიმე წამში მიიღებთ ზუსტ პასუხს.</p>
       </div>
-      <a href="btu.html" className="kg-btn-primary">გახსენი კალკულატორი <IconArrow size={16}/></a>
+      <a href="btu.html" className="kg-btn-primary">გახსენით კალკულატორი <IconArrow size={16}/></a>
     </div>
   </section>
 );
@@ -120,8 +120,8 @@ const TeamBlock = () => (
       </div>
       <div>
         <h2>ვინ ვართ ჩვენ</h2>
-        <p>ჩვენ ვართ ოთხი ადამიანის დამოუკიდებელი გუნდი — ინჟინრები და მონტაჟის სპეციალისტები. ერთად 20+ წლის გამოცდილება გვაქვს კონდიციონერების მონტაჟის, სერვისისა და ანალიზის სფეროში.</p>
-        <p>ყოველ წელს 12–18 ახალ მოდელს ვტესტავთ რეალურ ბინებში — ეს ლაბორატორიული მონაცემები კი არ არის, არამედ ცოცხალ თბილისში გამოცდილი მუშაობის შედეგი.</p>
+        <p>ოთხკაციანი დამოუკიდებელი გუნდი ვართ — ინჟინრები და მემონტაჟეები. კონდიციონერების მონტაჟში, სერვისსა და შერჩევაში ჯამში 20 წელზე მეტი გამოცდილება გვიგროვდება.</p>
+        <p>ყოველწლიურად 12–18 ახალ მოდელს ვცდით ნამდვილ ბინებში. ეს ლაბორატორიის სტერილური ციფრები არ არის — ყველაფერი თბილისის ზაფხულშია გამოცდილი.</p>
         <a href="methodology.html" className="kg-team-link">სრული მეთოდოლოგია <IconChevR size={12}/></a>
       </div>
     </div>
@@ -145,8 +145,8 @@ const MegatechnicaCTA = ({ brand, headline, compact }) => {
         ? `სად ვიყიდო ${brand}? — მეგატექნიკაში`
         : "სად ვიყიდო კონდიციონერი? — მეგატექნიკაში");
   const subtitle = brand
-    ? `მეგატექნიკა — ${brand}-ის ოფიციალური დისტრიბუტორი საქართველოში.`
-    : "მეგატექნიკა — Hisense, AUX, LG და Samsung-ის ოფიციალური დისტრიბუტორი საქართველოში.";
+    ? `მეგატექნიკა ${brand}-ის ოფიციალური დისტრიბუტორია საქართველოში — ტექნიკა პირველწყაროდან, სრული გარანტიით.`
+    : "მეგატექნიკა Hisense-ის, AUX-ის, LG-სა და Samsung-ის ოფიციალური დისტრიბუტორია საქართველოში — და კონდიციონერების ყველაზე დიდი არჩევანიც აქ არის.";
 
   return (
     <section className={"kg-mega-cta" + (compact ? " kg-mega-cta--compact" : "")}>
@@ -160,36 +160,36 @@ const MegatechnicaCTA = ({ brand, headline, compact }) => {
         <div className="kg-mega-cta-point">
           <IconBolt size={20} color="#06B6D4"/>
           <div>
-            <h4>ყველაზე იაფი ფასი</h4>
-            <p>ოფიციალური დისტრიბუტორის პირდაპირი მიწოდება — შუამავლების გარეშე.</p>
+            <h4>ყველაზე დაბალი ფასები</h4>
+            <p>ტექნიკა პირდაპირ დისტრიბუტორისგან, შუამავლების გარეშე — ამიტომ ფასებიც ბაზარზე ყველაზე დაბალია.</p>
           </div>
         </div>
         <div className="kg-mega-cta-point">
           <IconShield size={20} color="#06B6D4"/>
           <div>
-            <h4>საუკეთესო გარანტია</h4>
-            <p>გრძელვადიანი ქარხნული გარანტია + სრული მხარდაჭერა მთელი მუშაობის პერიოდში.</p>
+            <h4>ოფიციალური გარანტია</h4>
+            <p>სრული ქარხნული გარანტია და ავტორიზებული სერვისცენტრი — მთელი ექსპლუატაციის განმავლობაში.</p>
           </div>
         </div>
         <div className="kg-mega-cta-point">
           <IconWrench size={20} color="#06B6D4"/>
           <div>
-            <h4>პროფესიული სერვისი</h4>
-            <p>სერტიფიცირებული ტექნიკოსები, რეგულარული ტექნიკური მხარდაჭერა.</p>
+            <h4>უფასო მიწოდება</h4>
+            <p>შეკვეთას სახლამდე უფასოდ მოგიტანენ, მონტაჟს კი სერტიფიცირებული ტექნიკოსები შეასრულებენ.</p>
           </div>
         </div>
         <div className="kg-mega-cta-point">
           <IconCheck size={20} color="#06B6D4"/>
           <div>
-            <h4>მაღაზიები მთელ საქართველოში + ონლაინ</h4>
-            <p>თბილისი, ბათუმი, ქუთაისი და სხვა ქალაქები — ფიზიკური მაღაზიები. ან შეიძინეთ ონლაინ.</p>
+            <h4>ონლაინ და მაღაზიებში</h4>
+            <p>ფიზიკური მაღაზიები თბილისში, ბათუმსა და ქუთაისში — ან შეუკვეთეთ ონლაინ, სახლიდან გაუსვლელად.</p>
           </div>
         </div>
       </div>
 
       <div className="kg-mega-cta-action">
         <a href="https://megatechnica.ge" target="_blank" rel="noopener" className="kg-btn-primary">
-          ნახე megatechnica.ge-ზე <IconArrow size={16}/>
+          ნახეთ megatechnica.ge-ზე <IconArrow size={16}/>
         </a>
       </div>
     </section>

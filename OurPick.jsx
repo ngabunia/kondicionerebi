@@ -20,12 +20,12 @@ const OurPick = ({ name, reason, specs, price, oldPrice, ctaLabel, ctaHref, alte
         </ul>
         <div className="kg-pick-bottom">
           <div className="kg-pick-price">
-            <span className="kg-price-now latin">{price} ლარი</span>
-            {oldPrice && <span className="kg-price-old latin">{oldPrice} ლარი</span>}
+            <span className="kg-price-now latin">{price} ₾</span>
+            {oldPrice && <span className="kg-price-old latin">{oldPrice} ₾</span>}
           </div>
           <a href={ctaHref} className="kg-btn-primary">{ctaLabel} <IconArrow size={16}/></a>
         </div>
-        {alternatives && <p className="small muted kg-alts">ალტერნატივები: {alternatives}</p>}
+        {alternatives && <p className="small muted kg-alts">სად კიდევ იყიდება: {alternatives}</p>}
       </div>
     </div>
   </section>

@@ -16,9 +16,9 @@ const CEILING_MULT = {
 };
 
 const SUN_MULT = {
-  north:    { mult: 0.90, label: "ჩრდილოეთი",            sub: "ნაკლები პირდაპირი მზე" },
-  eastwest: { mult: 1.00, label: "აღმოსავლეთი ან დასავლეთი", sub: "საშუალო ექსპოზიცია" },
-  south:    { mult: 1.20, label: "სამხრეთი",              sub: "პირდაპირი მზე დღის უმეტესობას" },
+  north:    { mult: 0.90, label: "ჩრდილოეთი",            sub: "პირდაპირი მზე თითქმის არ ხვდება" },
+  eastwest: { mult: 1.00, label: "აღმოსავლეთი ან დასავლეთი", sub: "ზომიერი მზე" },
+  south:    { mult: 1.20, label: "სამხრეთი",              sub: "პირდაპირი მზე დღის დიდ ნაწილში" },
 };
 
 const ROOM_TYPE = {
@@ -31,7 +31,7 @@ const ROOM_TYPE = {
 const HEAT_SOURCES = [
   { id: "computer", label: "კომპიუტერი",         add: 400, icon: "monitor" },
   { id: "tv",       label: "ტელევიზორი",          add: 300, icon: "tv" },
-  { id: "kitchen",  label: "სამზარეულო ტექნიკა", add: 600, icon: "chef" },
+  { id: "kitchen",  label: "სამზარეულოს ტექნიკა", add: 600, icon: "chef" },
 ];
 
 // Each person beyond 2 adds 600 BTU
@@ -168,34 +168,34 @@ const PeopleSlider = ({ value, onChange }) => (
 // -------- Recommended models per BTU class --------
 const RECS_BY_BTU = {
   5000:  [
-    { name: "Hisense AS-05HR4", reason: "მცირე ოთახისთვის — საუკეთესო ფასი.",       price: "399",   href: "#" },
-    { name: "AUX ASW-H05A4",        reason: "ბიუჯეტური ალტერნატივა, საიმედო.",         price: "349",   href: "#" },
-    { name: "Samsung WindFree 5K", reason: "უხმაუროდ მუშაობს, A++ ენერგო-კლასი.",     price: "749",   href: "#" },
+    { name: "Hisense AS-05HR4", reason: "საუკეთესო ფასი მცირე ოთახისთვის.",       price: "399",   href: "#" },
+    { name: "AUX ASW-H05A4",        reason: "საიმედო და კიდევ უფრო იაფი ალტერნატივა.",         price: "349",   href: "#" },
+    { name: "Samsung WindFree 5K", reason: "თითქმის უხმოდ მუშაობს, ენერგოკლასი A++.",     price: "749",   href: "#" },
   ],
   7000:  [
-    { name: "Hisense AS-07UR4", reason: "კატეგორიის საუკეთესო ფასი/ხარისხი.",       price: "479",   href: "#" },
-    { name: "AUX ASW-H07A4",        reason: "ბიუჯეტური — გასაქირავებელი ბინისთვის.",   price: "419",   href: "#" },
-    { name: "LG S07EQ",          reason: "WiFi და ქართული აპლიკაცია.",                price: "829",   href: "#" },
+    { name: "Hisense AS-07UR4", reason: "ფასისა და ხარისხის საუკეთესო შეფარდება ამ კლასში.",       price: "479",   href: "#" },
+    { name: "AUX ASW-H07A4",        reason: "ბიუჯეტური ვარიანტი — იდეალურია გასაქირავებელი ბინისთვის.",   price: "419",   href: "#" },
+    { name: "LG S07EQ",          reason: "WiFi-ით სმარტფონიდანაც იმართება.",                price: "829",   href: "#" },
   ],
   9000:  [
-    { name: "Hisense AS-09HR4", reason: "საუკეთესო საერთო — სიჩუმე და გარანტია.",     price: "699",   href: "guide.html" },
-    { name: "AUX ASW-H09A4",        reason: "150 ლარით იაფი — ბიუჯეტური არჩევანი.",      price: "549",   href: "guide.html" },
-    { name: "Samsung WindFree 9K", reason: "ენერგო-ეფექტური, თითქმის უხმაუროდ.",       price: "1 199", href: "guide.html" },
+    { name: "Hisense AS-09HR4", reason: "ჩვენი ფავორიტი — ჩუმი მუშაობა და მყარი გარანტია.",     price: "699",   href: "guide.html" },
+    { name: "AUX ASW-H09A4",        reason: "ფავორიტზე 150 ლარით იაფია — ბიუჯეტური არჩევანი.",      price: "549",   href: "guide.html" },
+    { name: "Samsung WindFree 9K", reason: "ენერგოეფექტური და თითქმის უხმო.",       price: "1 199", href: "guide.html" },
   ],
   12000: [
-    { name: "Hisense AS-12HR4", reason: "სამხრეთის ოთახისთვის ან ჭერით 3 მ+.",       price: "879",   href: "#" },
-    { name: "Daikin Sensira 12K",reason: "5 წლის გარანტია, იაპონური ხარისხი.",        price: "1 449", href: "#" },
-    { name: "Samsung WindFree 12K", reason: "30-35 კვ.მ ფართობისთვის — პრემიუმი.",     price: "1 599", href: "#" },
+    { name: "Hisense AS-12HR4", reason: "სამხრეთისკენ გამავალი ან მაღალჭერიანი ოთახისთვის.",       price: "879",   href: "#" },
+    { name: "Daikin Sensira 12K",reason: "იაპონური ხარისხი, 5-წლიანი გარანტია.",        price: "1 449", href: "#" },
+    { name: "Samsung WindFree 12K", reason: "პრემიუმკლასი 30–35 კვ.მ ფართობისთვის.",     price: "1 599", href: "#" },
   ],
   18000: [
-    { name: "Hisense AS-18FR4", reason: "დიდი ფართობებისთვის, 35–50 კვ.მ-მდე.",      price: "1 049", href: "#" },
-    { name: "AUX ASW-H18A4",        reason: "ეკონომიური ვარიანტი მთავარ მისაღებში.",     price: "899",   href: "#" },
-    { name: "LG S18EQ",          reason: "ენერგო-კლასი A+++, ცხელი თვეებისთვის.",      price: "1 899", href: "#" },
+    { name: "Hisense AS-18FR4", reason: "დიდი ოთახებისთვის — 35–50 კვ.მ-მდე.",      price: "1 049", href: "#" },
+    { name: "AUX ASW-H18A4",        reason: "ეკონომიური ვარიანტი დიდი მისაღებისთვის.",     price: "899",   href: "#" },
+    { name: "LG S18EQ",          reason: "ენერგოკლასი A+++ — დენს ცხელ თვეებშიც ზოგავს.",      price: "1 899", href: "#" },
   ],
   24000: [
-    { name: "Daikin FTXM 24K",   reason: "კომერციული ფართობებისთვის.",                price: "2 999", href: "#" },
-    { name: "Mitsubishi MSZ-EF24", reason: "პრემიუმი — გრძელვადიანი ინვესტიცია.",     price: "3 499", href: "#" },
-    { name: "Samsung WindFree 24K", reason: "მაღალი ჭერის სივრცეებისთვის.",            price: "2 749", href: "#" },
+    { name: "Daikin FTXM 24K",   reason: "კომერციული ფართებისთვის.",                price: "2 999", href: "#" },
+    { name: "Mitsubishi MSZ-EF24", reason: "პრემიუმკლასი — გრძელვადიანი ინვესტიცია.",     price: "3 499", href: "#" },
+    { name: "Samsung WindFree 24K", reason: "მაღალჭერიანი სივრცეებისთვის.",            price: "2 749", href: "#" },
   ],
 };
 
@@ -241,16 +241,16 @@ const BtuCalculator = () => {
             <span className="kg-crumb-sep">›</span>
             <span>BTU კალკულატორი</span>
           </nav>
-          <span className="kg-calc-eyebrow"><IconCalc size={14}/> ინტერაქტიული ხელსაწყო</span>
+          <span className="kg-calc-eyebrow"><IconCalc size={14}/> ინტერაქტიული კალკულატორი</span>
           <h1>რა BTU მჭირდება?</h1>
-          <p>შეიყვანე ოთახის სპეციფიკაცია — წამში გაიგებ კონდიციონერის ზუსტ სიმძლავრეს და ნახავ რეკომენდირებულ მოდელებს.</p>
+          <p>შეავსეთ ოთახის მონაცემები — მაშინვე გაიგებთ, რა სიმძლავრის კონდიციონერი გჭირდებათ, და ნახავთ ჩვენს რჩეულ მოდელებსაც.</p>
         </div>
       </header>
 
       <div className="kg-calc-layout">
         {/* --------- Form (left) --------- */}
         <form className="kg-calc-form" onSubmit={e => e.preventDefault()}>
-          <h2>ოთახის სპეციფიკაცია</h2>
+          <h2>ოთახის მონაცემები</h2>
 
           <div className="kg-field">
             <div className="kg-field-label">
@@ -275,8 +275,8 @@ const BtuCalculator = () => {
 
           <div className="kg-field">
             <div className="kg-field-label">
-              <span className="kg-field-title">მზის ექსპოზიცია</span>
-              <span className="kg-field-hint">სად იყურება ფანჯრები</span>
+              <span className="kg-field-title">ფანჯრების მხარე</span>
+              <span className="kg-field-hint">საით გადის ფანჯრები</span>
             </div>
             <Segmented
               cols={3}
@@ -293,7 +293,7 @@ const BtuCalculator = () => {
           <div className="kg-field">
             <div className="kg-field-label">
               <span className="kg-field-title">ადამიანების რაოდენობა</span>
-              <span className="kg-field-hint">ხშირად ოთახში</span>
+              <span className="kg-field-hint">ვინც ხშირად არის ოთახში</span>
             </div>
             <PeopleSlider value={people} onChange={setPeople}/>
           </div>
@@ -317,8 +317,8 @@ const BtuCalculator = () => {
 
           <div className="kg-field">
             <div className="kg-field-label">
-              <span className="kg-field-title">დამატებითი თბური წყაროები</span>
-              <span className="kg-field-hint">აარჩიე ყველა</span>
+              <span className="kg-field-title">სითბოს დამატებითი წყაროები</span>
+              <span className="kg-field-hint">მონიშნეთ ყველა, რაც ოთახშია</span>
             </div>
             <ChecksGrid
               options={HEAT_SOURCES}
@@ -330,19 +330,19 @@ const BtuCalculator = () => {
 
         {/* --------- Live result (right, sticky) --------- */}
         <aside className="kg-result">
-          <span className="kg-result-label"><IconBolt size={14} color="#06B6D4"/> ცოცხალი გათვლა</span>
-          <div className="kg-result-headline">თქვენ გჭირდებათ კონდიციონერი:</div>
+          <span className="kg-result-label"><IconBolt size={14} color="#06B6D4"/> ითვლება რეალურ დროში</span>
+          <div className="kg-result-headline">თქვენს ოთახს სჭირდება:</div>
           <div className={"kg-result-number" + (bumped ? " bumped" : "")}>
             {formatBTU(result.rounded)}
             <span className="unit">BTU</span>
           </div>
 
           <div className="kg-result-class">
-            ეს შეესაბამება <b>{formatBTU(btuClass)} BTU</b> კატეგორიის კონდიციონერს — ბაზრის სტანდარტი {btuClass <= 9000 ? "მცირე-საშუალო" : btuClass <= 18000 ? "საშუალო-დიდი" : "დიდი"} ფართობებისთვის.
+            ეს <b>{formatBTU(btuClass)} BTU</b> კლასის კონდიციონერია — გავრცელებული ზომა {btuClass <= 9000 ? "მცირე და საშუალო" : btuClass <= 18000 ? "საშუალო და დიდი" : "დიდი"} ფართობისთვის.
           </div>
 
           <div className="kg-result-breakdown">
-            <h4>როგორ გავთვალეთ</h4>
+            <h4>როგორ გამოვთვალეთ</h4>
             <div className="kg-breakdown-row">
               <span>{area} კვ.მ × 350 BTU</span>
               <span className="v">{formatBTU(result.breakdown.base)}</span>
@@ -367,7 +367,7 @@ const BtuCalculator = () => {
             )}
             {result.breakdown.heatAdd > 0 && (
               <div className="kg-breakdown-row">
-                <span>თბური წყაროები</span>
+                <span>სითბოს წყაროები</span>
                 <span className="v">+{formatBTU(result.breakdown.heatAdd)}</span>
               </div>
             )}
@@ -378,7 +378,7 @@ const BtuCalculator = () => {
           </div>
 
           <div className="kg-result-actions">
-            <a href="#recs" className="kg-btn-primary">ნახე რეკომენდაციები <IconArrow size={14}/></a>
+            <a href="#recs" className="kg-btn-primary">ნახეთ რეკომენდაციები <IconArrow size={14}/></a>
             <button className="kg-result-save" type="button"
                     onClick={() => setSaved("show")}>
               <SegIcon name="save" size={14}/> შენახვა
@@ -388,7 +388,7 @@ const BtuCalculator = () => {
           {saved && (
             <>
               <div className="kg-save-form">
-                <input type="email" placeholder="თქვენი ელ.ფოსტა"
+                <input type="email" placeholder="თქვენი ელფოსტა"
                        value={email} onChange={e => setEmail(e.target.value)}/>
                 <button type="button"
                         onClick={() => { if (email.includes("@")) setSaved("done"); }}>
@@ -408,18 +408,18 @@ const BtuCalculator = () => {
       {/* --------- Recommended models below --------- */}
       <section id="recs" className="kg-calc-recs">
         <SectionHead
-          title={`რეკომენდირებული ${formatBTU(btuClass)} BTU მოდელები`}
-          link={{ label: "ნახე ყველა გზამკვლევი", href: "guides.html" }}
+          title={`ჩვენი რჩეული ${formatBTU(btuClass)} BTU მოდელები`}
+          link={{ label: "ყველა გზამკვლევი", href: "guides.html" }}
         />
         <TopPicksRow
           picks={recs.map((r, i) => ({
-            rank: i === 0 ? "საუკეთესო არჩევანი" : i === 1 ? "ბიუჯეტური" : "პრემიუმი",
+            rank: i === 0 ? "ჩვენი ფავორიტი" : i === 1 ? "ბიუჯეტური არჩევანი" : "პრემიუმკლასი",
             ...r,
           }))}
         />
         <div className="kg-calc-cta-strip">
-          <p>ნახე ყველა <b>{formatBTU(btuClass)} BTU</b> კონდიციონერი მეგატექნიკაში — Hisense, AUX, LG, Samsung-ის ოფიციალური დისტრიბუტორი. ყველაზე იაფი ფასი, საუკეთესო გარანტია, მაღაზიები მთელ საქართველოში.</p>
-          <a href="https://megatechnica.ge" target="_blank" rel="noopener" className="kg-btn-primary">გადადი megatechnica.ge-ზე <IconArrow size={14}/></a>
+          <p>სრული არჩევანი მეგატექნიკაშია — <b>{formatBTU(btuClass)} BTU</b> კლასის ათობით მოდელი Hisense-ის, AUX-ის, LG-სა და Samsung-ის ოფიციალური დისტრიბუტორისგან: ყველაზე დაბალი ფასები, უფასო მიწოდება, მაღაზიები მთელ საქართველოში.</p>
+          <a href="https://megatechnica.ge" target="_blank" rel="noopener" className="kg-btn-primary">გადადით megatechnica.ge-ზე <IconArrow size={14}/></a>
         </div>
       </section>
     </>

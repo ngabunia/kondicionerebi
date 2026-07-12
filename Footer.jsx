@@ -9,9 +9,9 @@ const Footer = () => (
           </svg>
           <span>kondicionerebi<span style={{ color: "var(--color-accent)" }}>.ge</span></span>
         </div>
-        <p className="kg-footer-tagline">დამოუკიდებელი მიმოხილვები კონდიციონერებზე — ქართულად.</p>
-        <p className="small">kondicionerebi.ge არის დამოუკიდებელი საინფორმაციო რესურსი კონდიციონერების შესახებ.</p>
-        <p className="small" style={{ marginTop: 12 }}>ჩვენი რეკომენდირებული გამყიდველი — <a href="https://megatechnica.ge" target="_blank" rel="noopener" style={{ color: "#fff", fontWeight: 600 }}>მეგატექნიკა</a>, Hisense, AUX, LG და Samsung-ის ოფიციალური დისტრიბუტორი საქართველოში.</p>
+        <p className="kg-footer-tagline">კონდიციონერების დამოუკიდებელი მიმოხილვები — ქართულად.</p>
+        <p className="small">kondicionerebi.ge დამოუკიდებელი საინფორმაციო რესურსია — ვწერთ ყველაფერზე, რაც საქართველოში კონდიციონერის შერჩევას, ყიდვასა და მოვლას ეხება.</p>
+        <p className="small" style={{ marginTop: 12 }}>საყიდლად ჩვენი რჩეული მაღაზია — <a href="https://megatechnica.ge" target="_blank" rel="noopener" style={{ color: "#fff", fontWeight: 600 }}>მეგატექნიკა</a>: Hisense-ის, AUX-ის, LG-სა და Samsung-ის ოფიციალური დისტრიბუტორი, ყველაზე დაბალი ფასებითა და უფასო მიწოდებით მთელ საქართველოში.</p>
       </div>
       <div>
         <h5>ნავიგაცია</h5>
@@ -22,7 +22,7 @@ const Footer = () => (
           <li><a href="about.html">ჩვენ შესახებ</a></li>
           <li><a href="methodology.html">მეთოდოლოგია</a></li>
           <li><a href="disclosure.html">გამჭვირვალობა</a></li>
-          <li><a href="privacy.html">კონფიდენციალობა</a></li>
+          <li><a href="privacy.html">კონფიდენციალურობა</a></li>
         </ul>
       </div>
       <div>
@@ -36,7 +36,7 @@ const Footer = () => (
     </div>
     <div className="kg-footer-strip">
       <span className="small">© 2026 kondicionerebi.ge · ყველა უფლება დაცულია</span>
-      <span className="small">სტატიებში არსებული ზოგიერთი ბმული შესაძლოა აფილირებული იყოს გამყიდველებთან (მათ შორის მეგატექნიკასთან). რეკომენდაცია არ არის დამოკიდებული აფილაციაზე. <a href="disclosure.html">სრული გამჭვირვალობა →</a></span>
+      <span className="small">სტატიებში ზოგიერთი ბმული პარტნიორულია (მათ შორის — მეგატექნიკის). თუ მათი გავლით შეიძენთ, შესაძლოა საკომისიო მივიღოთ — ეს არც ფასზე აისახება და არც ჩვენს რეკომენდაციებზე. <a href="disclosure.html">ვრცლად გამჭვირვალობის შესახებ →</a></span>
     </div>
   </footer>
 );
